@@ -16,6 +16,9 @@ def home(request):
     else:
         return render(request, 'index.html',{'fields':fields,'posts':posts,})
 
+def dongmoon(request):
+    return render(request, 'dongmoon.html')
+
 def singlepost(request, post_id):       
     single_post = get_object_or_404(Blog, pk=post_id)
     post_comments = Comment.objects.filter(post=post_id)

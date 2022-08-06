@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name ='home'),
     path('home/', views.home, name ='home'),
+    path('dongmoon/', views.dongmoon, name ='dongmoon'),
     path('singlepost/', views.singlepost, name ='singlepost'),
     path('singlepost/<int:post_id>', views.singlepost, name ='singlepost'),
     path('create_comment/', views.create_comment, name ='create_comment'),
