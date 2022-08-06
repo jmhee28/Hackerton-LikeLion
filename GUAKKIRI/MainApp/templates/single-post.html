@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href='{% static "/css/single-post.css" %}' rel="stylesheet">
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container_single">
+        <div>
+          <div data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">{{single_post.category2}} 게시판</span> <span class="mx-1">&bullet;</span> <span>{{single_post.date}}</span></div>
+              <h1 class="mb-5">{{single_post.title}}</h1>
+              <div style="text-align: right;"><h5 class="comment-title py-4">Written by, {{single_post.user}}</h5></div>
+
+              <figure class="my-4">
+                {% if single_post.photo %}
+                <img src="{{ single_post.photo.url }}" style="display: block; margin: 0px auto; max-width : 700px;" alt="" class="img-fluid">
+                {% endif %}
+                
+                <!--<figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>-->
+              </figure>
+              <p>{{single_post.body}}</p>
+              
+       
+            </div><!-- End Single Post Content -->
+
+            <!-- ======= Comments ======= -->
+            
+            <div class="comments">
+              <h5 class="comment-title py-4">Comments:</h5>
+              {% for post_comment in post_comments %}
+              <div class="comment d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <div class="avatar avatar-sm rounded-circle">
+                    <img class="avatar-img" src='{% static "/img/person-5.jpg" %}' alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 ms-sm-3">
+                  <div class="comment-meta d-flex align-items-baseline">
+                    <h6 class="me-2">{{post_comment.user}}</h6>
+                    <span class="text-muted">{{post_comment.date}}</span>
+                  </div>
+                  <div class="comment-body">
+                    {{post_comment.comment}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+
+
+
+<!-- 
+                  <div class="comment-replies bg-light p-3 mt-3 rounded">
+                    <h6 class="comment-replies-title mb-4 text-muted text-uppercase">2 replies</h6>
+
+                    <div class="reply d-flex mb-4">
+                      <div class="flex-shrink-0">
+                        <div class="avatar avatar-sm rounded-circle">
+                          <img class="avatar-img" src='{% static "/img/person-4.jpg" %}' alt="" class="img-fluid">
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-2 ms-sm-3">
+                        <div class="reply-meta d-flex align-items-baseline">
+                          <h6 class="mb-0 me-2">Brandon Smith</h6>
+                          <span class="text-muted">2d</span>
+                        </div>
+                        <div class="reply-body">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="reply d-flex">
+                      <div class="flex-shrink-0">
+                        <div class="avatar avatar-sm rounded-circle">
+                          <img class="avatar-img" src='{% static "/img/person-3.jpg" %}' alt="" class="img-fluid">
+                        </div>
+                      </div>
+                      <div class="flex-grow-1 ms-2 ms-sm-3">
+                        <div class="reply-meta d-flex align-items-baseline">
+                          <h6 class="mb-0 me-2">James Parsons</h6>
+                          <span class="text-muted">1d</span>
+                        </div>
+                        <div class="reply-body">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore sed eos sapiente, praesentium.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            End Comments -->
+
+            <!-- ======= Comments Form ======= -->
+            <div class="comment_l">
+                <form action="{% url 'create_comment' post_id %}" method="POST">
+                  {% csrf_token %}
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-name"></label>
+                    
+                  </div>
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-email"></label>
+                    
+                  </div>
+                  <div class="col-12 mb-3">
+                    <!-- 코멘트본문 -->
+                    <div class="col-lg-12">
+                      <p class="comment-title">댓글 작성</p>
+                      <div class="row">
+                    <label for="comment-message"></label>
+                    <textarea class="form-control" name="comment" id="comment-message" placeholder="댓글을 입력하세요!" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="btn_comment">
+                    <input type="submit" class="btn btn-primary" value="작성하기">
+                  </div>
+                </form>
+
+                </div>
+              </div>
+            </div><!-- End Comments Form -->
+    </section>
+  </main><!-- End #main -->
+
+{% endblock %}
