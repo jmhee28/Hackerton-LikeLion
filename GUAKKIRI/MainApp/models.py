@@ -98,6 +98,10 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser):
+    position_choices=[
+        (True, True),
+        (False, False),
+    ]
     username    = models.CharField(max_length=30, unique=True)
     name        = models.CharField(max_length=40, null=False, blank=False)
     email       = models.EmailField(verbose_name='email', max_length=60, unique=True)
@@ -109,9 +113,9 @@ class User(AbstractBaseUser):
     major = models.CharField(verbose_name='전공', max_length=100)
     address = models.CharField(verbose_name='주소', max_length=100)
     phone_number = models.CharField(verbose_name='핸드폰 번호', max_length=100)
-    is_student = models.BooleanField(default=False)
-    is_looking_job = models.BooleanField(default=False)
-    is_headhunter = models.BooleanField(default=False)
+    is_student = models.BooleanField(choices = position_choices,default=False)
+    is_looking_job = models.BooleanField(choices = position_choices,default=False)
+    is_headhunter = models.BooleanField(choices = position_choices,default=False)
     # is_superuser = models.BooleanField(default=False)
 
     object = UserManager()  # 헬퍼 클래스 사용

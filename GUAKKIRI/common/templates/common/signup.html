@@ -147,26 +147,37 @@
                     좋아요!
                 </div>
             </div>
-            
-        </div>
-        <div class="form-group">
-            <label for="is_student">학생입니까?</label>
-            <select class="form-control" v-model="allowMultiple" id= "is_student">
-                <option value=true>Yes</option>
-                <option value=false>No</option>
-            </select>
-            <label for="is_looking_job">구직중입니까?</label>
-            <select class="form-control" v-model="allowMultiple" id= "is_looking_job">
-                <option value=true>Yes</option>
-                <option value=false>No</option>
-            </select>
-            <label for="is_headhunter">직원을 찾고 있습니까?</label>
-            <select class="form-control" v-model="allowMultiple" id= "is_headhunter">
-                <option value=true>Yes</option>
-                <option value=false>No</option>
-            </select>
-        </div>
 
+            <div class="form-group">
+            <label for="is_student">학생입니까?</label>
+            <select class="form-select" name ="is_student">
+                {% for v, k in form.fields.is_student.choices %}
+                    <option value="{{ v }}" {% if form.fields.is_student.value == v %} selected {% endif %}>{{ k }}</option>
+                {% endfor %}
+            </select>
+        
+            <label for="is_looking_job">구직중입니까?</label>
+            <select class="form-select" name = "is_looking_job">
+                {% for v, k in form.fields.is_looking_job.choices %}
+                <option value="{{ v }}" {% if form.fields.is_looking_job.value == v %} selected {% endif %}>{{ k }}</option>
+            {% endfor %}
+            </select>
+            
+            <label for="is_headhunter">직원을 찾고 있습니까?</label>
+            <select class="form-select" name = "is_headhunter">
+                {% for v, k in form.fields.is_headhunter.choices %}
+                    <option value="{{ v }}" {% if form.fields.is_headhunter.value == v %} selected {% endif %}>{{ k }}</option>
+                {% endfor %}
+            </select>
+        </div>
+       
+          
+        </div>
+        </div>
+        </div>
+        
+            
+        
 
         <div class="row p-4">
             
