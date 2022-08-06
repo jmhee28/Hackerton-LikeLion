@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    posts=Blog.objects.all()
+    posts=Blog.objects.filter(user=request.user)
     fields=CategoryTree.objects.all()
     if request.user.is_authenticated:
         info=Individual_info()
@@ -15,6 +15,9 @@ def home(request):
         return render(request, 'index.html',{'fields':fields,'posts':posts,'info':info})
     else:
         return render(request, 'index.html',{'fields':fields,'posts':posts,})
+
+def dongmoon(request):
+    return render(request, 'dongmoon.html')
 
 def singlepost(request, post_id):       
     single_post = get_object_or_404(Blog, pk=post_id)

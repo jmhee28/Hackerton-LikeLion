@@ -42,7 +42,7 @@
 
                       </ol>
                       <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
-                        <span class="number">{{ info.posting_num }} <span class="follow">개의 포스팅</span></span>
+                        <span class="number">{{ info.posting_num }} <span class="follow">포스팅</span></span>
                         <a href="{% url 'write' %}" class="write">
                         <img id="bigger" src='{% static "/img/pencil-square.svg" %}' alt="">
                         </a>
@@ -89,7 +89,7 @@
                     <img src="{% static '/img\elephant-icon-11586 (1).jpg' %}" alt="" class="img-fluid">
                     {% endif %}
                   </a>
-                  <div class="post-meta"><span class="date">{{post.category2}} 게시판</span> <span class="mx-1">&bullet;</span> <span>{{post.date}}</span></div>
+                  <div class="post-meta"><span class="mx-1">&bullet;</span> <span>{{post.date}}</span></div>
                   <h2><a href="{% url 'singlepost' %}">{{post.title}}</a></h2>
                 </div>
               </div>
