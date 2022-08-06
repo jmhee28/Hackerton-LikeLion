@@ -42,7 +42,7 @@ class Individual_info(models.Model):
 
 class UserManager(BaseUserManager):
     # 일반 user 생성, username 이 userID를 의미함
-    def create_user(self,email,username, name,university, major, address, phone_number,password=None, ):
+    def create_user(self,email,username, name,university, major, address, phone_number, is_student,is_looking_job,is_headhunter,password=None, ):
         if not username:
             raise ValueError("Users must have an userID.")
         if not name:
@@ -61,6 +61,7 @@ class UserManager(BaseUserManager):
         if not phone_number:
             msg = 'Please Verify Your phone_number'
             raise ValueError(msg)     
+            
         user = self.model(
             username = username,
             name = name,
@@ -68,7 +69,10 @@ class UserManager(BaseUserManager):
             university = university,
             major = major,
             address = address,
-            phone_number = phone_number
+            phone_number = phone_number,
+            is_student = is_student,
+            is_looking_job = is_looking_job,
+            is_headhunter = is_headhunter,
 
         )
         user.set_password(password)
@@ -105,12 +109,15 @@ class User(AbstractBaseUser):
     major = models.CharField(verbose_name='전공', max_length=100)
     address = models.CharField(verbose_name='주소', max_length=100)
     phone_number = models.CharField(verbose_name='핸드폰 번호', max_length=100)
+    is_student = models.BooleanField(default=False)
+    is_looking_job = models.BooleanField(default=False)
+    is_headhunter = models.BooleanField(default=False)
     # is_superuser = models.BooleanField(default=False)
 
     object = UserManager()  # 헬퍼 클래스 사용
 
     USERNAME_FIELD = 'email'  # 로그인 ID로 사용할 필드
-    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number'] # 필수 작성 필드
+    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number', 'is_student','is_looking_job','is_headhunter'] # 필수 작성 필드
 
     def __str__(self):
         return self.username
