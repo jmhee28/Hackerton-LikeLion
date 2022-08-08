@@ -11,3 +11,6 @@
  ```cd GUAKKIRI```  
 
  ```python manage.py runserver```
+
+
+# **프론트 분들 html, css, js 같은거 올릴때 프로젝트 안에서 적용해보고 돌려보고 git에 올려주세요!**
