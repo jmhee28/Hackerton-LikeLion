@@ -1,0 +1,43 @@
+.card_signup{
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 424px;
+    height: 460px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    background-color: white;
+}
+
+#signup_bg{
+    background-color: #FAFAFA;
+}
+
+#userName{
+    display: none;
+}
+
+#userUniv {
+    display: none;
+}
+
+.name{
+    padding: 25px;
+    height: 400px;
+
+}
+
+.btn-end{
+    border-radius: 50px;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #FFD54F, #D500F9);
+    margin-top: 20px;
+}
+
+.btn-end:hover{
+    background-image: linear-gradient(to right, #ffd64fcd, #d400f9b4);
+}

@@ -6,10 +6,10 @@ from .models import Blog
 from .models import CategoryTree
 from .models import Comment
 from .models import Individual_info
-
+from .models import Informations
 class UserAdmin(BaseUserAdmin):
     # 관리자 화면에 보여질 칼럼 지정
-    list_display = ('username','name','email','create_dt','last_login','is_admin','is_staff', 'university', 'major', 'phone_number', 'address', 'is_student','is_looking_job','is_headhunter')
+    list_display = ('username','name','email','create_dt','last_login','is_admin','is_staff', 'university', 'major','is_student','is_looking_job','is_headhunter', 'photo')
     search_fields = ('username', 'name','email')
     readonly_fields = ('id', 'create_dt', 'last_login')
 
@@ -25,3 +25,4 @@ admin.site.register(Blog)
 admin.site.register(CategoryTree)
 admin.site.register(Comment)
 admin.site.register(Individual_info)
+admin.site.register(Informations)

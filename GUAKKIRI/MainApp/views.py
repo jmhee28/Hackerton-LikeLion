@@ -7,7 +7,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    posts=Blog.objects.filter(user=request.user)
+    if not request.user.is_authenticated:
+        posts=Blog.objects.all()
+    else:
+        posts=Blog.objects.filter(user=request.user)
     fields=CategoryTree.objects.all()
     if request.user.is_authenticated:
         info=Individual_info()
@@ -17,7 +20,15 @@ def home(request):
         return render(request, 'index.html',{'fields':fields,'posts':posts,})
 
 def dongmoon(request):
-    return render(request, 'dongmoon.html')
+    print(request.user.university)
+    posts = []
+    temp_posts=Blog.objects.all()
+    for u in  temp_posts:
+        print(u.user.university)
+        if request.user.university == u.user.university:
+            posts.append(u)  
+    return render(request, 'dongmoon.html',{'posts':posts})
+
 
 def singlepost(request, post_id):       
     single_post = get_object_or_404(Blog, pk=post_id)
@@ -44,6 +55,7 @@ def category(request, field):
     upperCat=CategoryTree.objects.get(category2=field)
     posts=Blog.objects.filter(category2=field)
     return render(request, 'category.html',{'posts':posts, 'upperCat':upperCat})
+
 
 def create(request):
     return render(request, 'create.html')
@@ -87,14 +99,13 @@ def profilesettings(request):
         form = CustomUserChangeForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            profile=request.FILES.get('photo')
-            return showprofile(request,{"profile":profile})
+            #profile=request.FILES.get('photo')
+            return showprofile(request)
 
     else:
         form = CustomUserChangeForm(instance = request.user)  
         context = {
             'form':form,
-
         }    
         return render(request, 'profile_settings.html',context)
        

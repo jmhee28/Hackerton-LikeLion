@@ -36,10 +36,26 @@ class Individual_info(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     posting_num=models.IntegerField(blank=True,default=0 )
     photo = models.ImageField(blank=True, null=True, upload_to='profile_photo')
+ 
+    # def create_info(self, user):
+    #     info = self.model(
+    #         user = user,
+    #         posting_num = 0,
+    #         photo = None,
+    #     )
+    #     info.save()
+    #     return info
 
     def __str__(self):
-        return self.user.username
+        return self.user.email
 
+class Informations(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    posting_num=models.IntegerField(blank=True,default=0 )
+    photo = models.ImageField(blank=True, null=True, upload_to='profile_photo')
+    def __str__(self):
+        return self.user.email
+        
 class UserManager(BaseUserManager):
     # 일반 user 생성, username 이 userID를 의미함
     def create_user(self,email,username, name,university, major, address, phone_number, is_student,is_looking_job,is_headhunter,password=None, ):
@@ -75,8 +91,10 @@ class UserManager(BaseUserManager):
             is_headhunter = is_headhunter,
 
         )
-        user.set_password(password)
+        user.set_password(password)        
         user.save(using=self._db)
+        info = Individual_info(user= user, posting_num = 0, )
+        info.save()
         return user
 
     # 관리자 User 생성
@@ -116,6 +134,7 @@ class User(AbstractBaseUser):
     is_student = models.BooleanField(choices = position_choices,default=False)
     is_looking_job = models.BooleanField(choices = position_choices,default=False)
     is_headhunter = models.BooleanField(choices = position_choices,default=False)
+    photo = models.ImageField(blank=True, null=True, upload_to='profile_photo')
     # is_superuser = models.BooleanField(default=False)
 
     object = UserManager()  # 헬퍼 클래스 사용
