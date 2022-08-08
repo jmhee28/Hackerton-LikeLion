@@ -92,20 +92,25 @@ def about(request):
     return render(request, 'about.html')
 
 def showprofile(request):
+  
     return render(request, 'showprofile.html')
 
 def profilesettings(request):   
     if request.method == 'POST'or request.method == 'FILES':
         form = CustomUserChangeForm(request.POST, instance=request.user)
         if form.is_valid():
+          
+            profile=request.FILES.get('photo')
             form.save()
-            #profile=request.FILES.get('photo')
+            
             return showprofile(request)
 
     else:
         form = CustomUserChangeForm(instance = request.user)  
+                 
         context = {
             'form':form,
+            
         }    
         return render(request, 'profile_settings.html',context)
        

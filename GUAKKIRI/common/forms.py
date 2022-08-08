@@ -12,11 +12,11 @@ class UserForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ("university", "major","username", "email", "address", "phone_number","is_student","is_looking_job","is_headhunter","photo")
+        fields = ("university", "major","username", "email", "address", "phone_number","is_student","is_looking_job","is_headhunter")
 
 class CustomUserChangeForm(forms.ModelForm):
  
     password = None
     class Meta:
         model =  User
-        fields = ("university", "major","username", "email", "address", "phone_number","is_student","is_looking_job","is_headhunter","photo")
+        fields = ("university", "major","username", "email", "address", "phone_number","is_student","is_looking_job","is_headhunter")

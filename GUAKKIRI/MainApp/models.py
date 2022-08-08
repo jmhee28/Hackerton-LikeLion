@@ -93,8 +93,7 @@ class UserManager(BaseUserManager):
         )
         user.set_password(password)        
         user.save(using=self._db)
-        info = Individual_info(user= user, posting_num = 0, )
-        info.save()
+
         return user
 
     # 관리자 User 생성
@@ -134,7 +133,7 @@ class User(AbstractBaseUser):
     is_student = models.BooleanField(choices = position_choices,default=False)
     is_looking_job = models.BooleanField(choices = position_choices,default=False)
     is_headhunter = models.BooleanField(choices = position_choices,default=False)
-    photo = models.ImageField(blank=True, null=True, upload_to='profile_photo')
+ 
     # is_superuser = models.BooleanField(default=False)
 
     object = UserManager()  # 헬퍼 클래스 사용

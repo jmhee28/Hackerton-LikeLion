@@ -12,7 +12,8 @@
                 <div class="account-settings">
                   <div class="user-profile">
                     <div class="user-avatar">
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+
+                      <!-- <img src="{{info.photo.url}}" alt="Maxwell Admin" style="display: block; margin: 0px auto; max-width : 700px;"> -->
                     </div>
                   </div>
                   <div class="about">
@@ -45,7 +46,8 @@
                           
                           <input type="submit">
                       </form>
-                      
+
+                      <input type="file" name="photo" accept="image/*" placeholder="파일 선택"><br>
                       <div>
                       <form action="{% url 'profilesettings' %}" method="post" enctype="multipart/form-data"></form>
                         {% csrf_token %}
