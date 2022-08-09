@@ -98,9 +98,10 @@ def showprofile(request):
 def profilesettings(request):   
     if request.method == 'POST'or request.method == 'FILES':
         form = CustomUserChangeForm(request.POST, instance=request.user)
+        
         if form.is_valid():
           
-            profile=request.FILES.get('photo')
+            
             form.save()
             
             return showprofile(request)
