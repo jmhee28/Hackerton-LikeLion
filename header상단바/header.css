@@ -1,0 +1,115 @@
+header .wrap{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 15px 0;
+}
+
+header a.logo{
+    height: 50px;
+    margin-left:80px;
+    background: url('./🦆\ icon\ _color\ shapes_\ \(1\).png') 0 center / contain no-repeat;
+}
+
+header .logo h1{
+    height:100%;
+    margin-left:100px;
+    padding-left:20px;
+    border-left:1px solid #262626;
+    font-size:80px;
+    color: skyblue;
+    line-height:39px;
+    font-weight:500;
+}
+
+.search{
+    display: flex;
+    flex: 3.5;
+    padding: 0 5px;
+    margin: 0 10%;
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.search input[type=text]{
+    position: relative;
+    flex: 9;
+    height: 50px;
+    width: 300px;
+    background: none;
+    border: none;
+    text-align: center;
+}
+
+.search button{
+    flex: 1;
+    background-color: skyblue;
+    font-size: 30px;
+}
+
+.gnb{
+    width: 300px;
+    flex: 1.5;
+    margin-top: 0px; 
+    margin-right: 200px;
+}
+
+.gnb ul{
+
+    display: flex;
+    margin-top: 30px;
+    width: 200px;
+}
+
+.gnb ul li{
+    position: relative;
+    flex: 2.5;
+    font-size: 0;
+
+    background-position:  center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    margin-top: 8px;
+    padding: 30px;
+}
+
+.gnb ul li:before{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -1.5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.gnb ul li.new{
+    background-image: url('./new.PNG');
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    
+}
+
+.gnb ul li.alert{
+    background-image: url('./alert.PNG');
+    width: 39px;
+    height: 39px;
+    margin-top: 8px;
+    
+}
+
+.gnb ul li.profile{
+    background-image: url('./profile.PNG');
+    margin-top: 0px;
+}
+
+
+
+.gnb ul li a{
+    display: block;
+    height: 100%;
+}
