@@ -1,5 +1,6 @@
 # Hackerton-LikeLion
 
+(1. 2. 는 ~/Hackerton-LikeLion 에서)
 1. git clone  
  ```git clone https://github.com/jmhee28/Hackerton-LikeLion.git```
 
