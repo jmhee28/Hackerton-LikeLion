@@ -130,6 +130,7 @@ class User(AbstractBaseUser):
     major = models.CharField(verbose_name='전공', max_length=100)
     address = models.CharField(verbose_name='주소', max_length=100)
     phone_number = models.CharField(verbose_name='핸드폰 번호', max_length=100)
+    photo = models.ImageField(blank=True, null=True, upload_to='blog_photo')
     is_student = models.BooleanField(choices = position_choices,default=False)
     is_looking_job = models.BooleanField(choices = position_choices,default=False)
     is_headhunter = models.BooleanField(choices = position_choices,default=False)

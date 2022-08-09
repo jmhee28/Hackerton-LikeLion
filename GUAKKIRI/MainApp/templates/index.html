@@ -17,7 +17,7 @@
                 <div class="profile"> <div class="card p-4"> 
                   <div class=" image d-flex flex-column justify-content-center align-items-center">
                     {% if user.is_authenticated %}
-                    <button class="btn btn-secondary"> <img class="profile_img" src="{{info.photo.url}}" height="100" width="100" /></button> 
+                    <button class="btn btn-secondary"> <img class="profile_img" src="{{user.photo.url}}" height="100" width="100" /></button> 
                     <ol style="padding-left: 0px;">
                       <span class="name mt-3">{{ user.username }}</span> 
                       <span class="idd d-flex flex-row justify-content-center align-items-center gap-2" ><br>
