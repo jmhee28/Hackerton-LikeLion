@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +8,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
     <!-- Pignose Calender -->
-    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="{% static './plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet">
     <!-- Chartist -->
-    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
-    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="{% static './plugins/chartist/css/chartist.min.css' %}">
+    <link rel="stylesheet" href="{% static './plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css' %}">
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
 </head>
 
@@ -46,10 +47,10 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <b class="logo-abbr"><img src="{% static 'images/logo.png' %}" alt=""> </b>
+                    <span class="logo-compact"><img src="{% static './images/logo-compact.png' %}" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                        <img src="{% static 'images/logo-text.png' %}" alt="">
                     </span>
                 </a>
             </div>
@@ -99,7 +100,7 @@
                                     <ul>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/1.jpg' %}" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Saiful Islam</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -109,7 +110,7 @@
                                         </li>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/2.jpg' %}" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Adam Smith</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -119,7 +120,7 @@
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/3.jpg' %}" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Barak Obama</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -129,7 +130,7 @@
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/4.jpg' %}" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Hilari Clinton</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -212,7 +213,7 @@
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                 <span class="activity active"></span>
-                                <img src="images/user/1.png" height="40" width="40" alt="">
+                                <img src="{% static 'images/user/1.png' %}" height="40" width="40" alt="">
                             </div>
                             <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-body">
@@ -259,141 +260,8 @@
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">Blank</a></li>
-                            <li><a href="./layout-one-column.html">One Column</a></li>
-                            <li><a href="./layout-two-column.html">Two column</a></li>
-                            <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
-                            <li><a href="./layout-vertical.html">Vertical</a></li>
-                            <li><a href="./layout-horizontal.html">Horizontal</a></li>
-                            <li><a href="./layout-boxed.html">Boxed</a></li>
-                            <li><a href="./layout-wide.html">Wide</a></li>
-                            
-                            
-                            <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Apps</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./app-profile.html">Profile</a></li>
-                            <li><a href="./app-calender.html">Calender</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Flot</a></li>
-                            <li><a href="./chart-morris.html">Morris</a></li>
-                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="./chart-chartist.html">Chartist</a></li>
-                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="./chart-peity.html">Peity</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">UI Components</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Accordion</a></li>
-                            <li><a href="./ui-alert.html">Alert</a></li>
-                            <li><a href="./ui-badge.html">Badge</a></li>
-                            <li><a href="./ui-button.html">Button</a></li>
-                            <li><a href="./ui-button-group.html">Button Group</a></li>
-                            <li><a href="./ui-cards.html">Cards</a></li>
-                            <li><a href="./ui-carousel.html">Carousel</a></li>
-                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="./ui-list-group.html">List Group</a></li>
-                            <li><a href="./ui-media-object.html">Media Object</a></li>
-                            <li><a href="./ui-modal.html">Modal</a></li>
-                            <li><a href="./ui-pagination.html">Pagination</a></li>
-                            <li><a href="./ui-popover.html">Popover</a></li>
-                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="./ui-tab.html">Tab</a></li>
-                            <li><a href="./ui-typography.html">Typography</a></li>
-                        <!-- </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
-                        </a>
-                        <ul aria-expanded="false"> -->
-                            <li><a href="./uc-nestedable.html">Nestedable</a></li>
-                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="./uc-toastr.html">Toastr</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Forms</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-basic.html">Basic Form</a></li>
-                            <li><a href="./form-validation.html">Form Validation</a></li>
-                            <li><a href="./form-step.html">Step Form</a></li>
-                            <li><a href="./form-editor.html">Editor</a></li>
-                            <li><a href="./form-picker.html">Picker</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
-                            <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Pages</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-login.html">Login</a></li>
-                            <li><a href="./page-register.html">Register</a></li>
-                            <li><a href="./page-lock.html">Lock Screen</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="./page-error-404.html">Error 404</a></li>
-                                    <li><a href="./page-error-403.html">Error 403</a></li>
-                                    <li><a href="./page-error-400.html">Error 400</a></li>
-                                    <li><a href="./page-error-500.html">Error 500</a></li>
-                                    <li><a href="./page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    
+                   
                 </ul>
             </div>
         </div>
@@ -577,7 +445,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/8.jpg" class="rounded-circle" alt="">
+                                    <img src="{% static './images/users/8.jpg' %}" class="rounded-circle" alt="">
                                     <h5 class="mt-3 mb-1">Ana Liem</h5>
                                     <p class="m-0">Senior Manager</p>
                                     <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
@@ -589,7 +457,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/5.jpg" class="rounded-circle" alt="">
+                                    <img src="{% static './images/users/5.jpg' %}" class="rounded-circle" alt="">
                                     <h5 class="mt-3 mb-1">John Abraham</h5>
                                     <p class="m-0">Store Manager</p>
                                     <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
@@ -601,7 +469,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/7.jpg" class="rounded-circle" alt="">
+                                    <img src="{% static './images/users/7.jpg' %}" class="rounded-circle" alt="">
                                     <h5 class="mt-3 mb-1">John Doe</h5>
                                     <p class="m-0">Sales Man</p>
                                     <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
@@ -613,7 +481,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="./images/users/1.jpg" class="rounded-circle" alt="">
+                                    <img src="{% static './images/users/1.jpg' %}" class="rounded-circle" alt="">
                                     <h5 class="mt-3 mb-1">Mehedi Titas</h5>
                                     <p class="m-0">Online Marketer</p>
                                     <!-- <a href="javascript:void()" class="btn btn-sm btn-warning">Send Message</a> -->
@@ -643,7 +511,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                    <td><img src="{% static './images/avatar/1.jpg' %}" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
                                                     <td>iPhone X</td>
                                                     <td>
                                                         <span>United States</span>
@@ -662,7 +530,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="./images/avatar/2.jpg" class=" rounded-circle mr-3" alt="">Walter R.</td>
+                                                    <td><img src="{% static './images/avatar/2.jpg' %}" class=" rounded-circle mr-3" alt="">Walter R.</td>
                                                     <td>Pixel 2</td>
                                                     <td><span>Canada</span></td>
                                                     <td>
@@ -679,7 +547,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="./images/avatar/3.jpg" class=" rounded-circle mr-3" alt="">Andrew D.</td>
+                                                    <td><img src="{% static './images/avatar/3.jpg' %}" class=" rounded-circle mr-3" alt="">Andrew D.</td>
                                                     <td>OnePlus</td>
                                                     <td><span>Germany</span></td>
                                                     <td>
@@ -696,7 +564,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="./images/avatar/6.jpg" class=" rounded-circle mr-3" alt=""> Megan S.</td>
+                                                    <td><img src="{% static './images/avatar/6.jpg' %}" class=" rounded-circle mr-3" alt=""> Megan S.</td>
                                                     <td>Galaxy</td>
                                                     <td><span>Japan</span></td>
                                                     <td>
@@ -713,7 +581,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="./images/avatar/4.jpg" class=" rounded-circle mr-3" alt=""> Doris R.</td>
+                                                    <td><img src="{% static './images/avatar/4.jpg' %}" class=" rounded-circle mr-3" alt=""> Doris R.</td>
                                                     <td>Moto Z2</td>
                                                     <td><span>England</span></td>
                                                     <td>
@@ -730,7 +598,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="./images/avatar/5.jpg" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
+                                                    <td><img src="{% static './images/avatar/5.jpg' %}" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
                                                     <td>Notebook Asus</td>
                                                     <td><span>China</span></td>
                                                     <td>
@@ -800,49 +668,49 @@
                                 <h4 class="card-title">Activity</h4>
                                 <div id="activity">
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/1.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/1.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>Received New Order</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/2.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>iPhone develered</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/2.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>3 Order Pending</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/2.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>Join new Manager</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/2.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>Branch open 5 min Late</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media border-bottom-1 pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/2.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/2.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>New support ticket received</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
                                         </div><span class="text-muted ">April 24, 2018</span>
                                     </div>
                                     <div class="media pt-3 pb-3">
-                                        <img width="35" src="./images/avatar/3.jpg" class="mr-3 rounded-circle">
+                                        <img width="35" src="{% static './images/avatar/3.jpg' %}" class="mr-3 rounded-circle">
                                         <div class="media-body">
                                             <h5>Facebook Post 30 Comments</h5>
                                             <p class="mb-0">I shared this on my fb wall a few months back,</p>
@@ -977,33 +845,33 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
 
-    <!-- Chartjs -->
-    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
-    <!-- Circle progress -->
-    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
-    <!-- Datamap -->
-    <script src="./plugins/d3v3/index.js"></script>
-    <script src="./plugins/topojson/topojson.min.js"></script>
-    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
-    <!-- Morrisjs -->
-    <script src="./plugins/raphael/raphael.min.js"></script>
-    <script src="./plugins/morris/morris.min.js"></script>
-    <!-- Pignose Calender -->
-    <script src="./plugins/moment/moment.min.js"></script>
-    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
-    <!-- ChartistJS -->
-    <script src="./plugins/chartist/js/chartist.min.js"></script>
-    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <!-- Chartjs {% static '-->
+    <script src="{% static './plugins/chart.js/Chart.bundle.min.js' %}"></script>
+    <!-- Circle p{% static 'rogress -->
+    <script src="{% static './plugins/circle-progress/circle-progress.min.js' %}"></script>
+    <!-- Datamap {% static '-->
+    <script src="{% static './plugins/d3v3/index.js' %}"></script>
+    <script src="{% static './plugins/topojson/topojson.min.js' %}"></script>
+    <script src="{% static './plugins/datamaps/datamaps.world.min.js' %}"></script>
+    <!-- Morrisjs{% static ' -->
+    <script src="{% static './plugins/raphael/raphael.min.js' %}"></script>
+    <script src="{% static './plugins/morris/morris.min.js' %}"></script>
+    <!-- Pignose {% static 'Calender -->
+    <script src="{% static './plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static './plugins/pg-calendar/js/pignose.calendar.min.js' %}"></script>
+    <!-- Chartist{% static 'JS -->
+    <script src="{% static './plugins/chartist/js/chartist.min.js' %}"></script>
+    <script src="{% static './plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
 
 
 
-    <script src="./js/dashboard/dashboard-1.js"></script>
+    <script src="{% static './js/dashboard/dashboard-1.js' %}"></script>
 
 </body>
 
