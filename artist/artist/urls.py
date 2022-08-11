@@ -10,5 +10,7 @@ urlpatterns = [
     path('login/',accounts_views.login, name='login'),
 
     path('signup/',accounts_views.signup, name='signup'),
+
+    path('dongmoon/', views.dongmoon, name ='dongmoon'),
     
 ]

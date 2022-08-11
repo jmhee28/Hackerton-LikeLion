@@ -46,7 +46,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="index.html">
+                <a href="{% url 'home' %}">
                     <b class="logo-abbr"><img src="{% static 'images/logo.png' %}" alt=""> </b>
                     <span class="logo-compact"><img src="{% static './images/logo-compact.png' %}" alt=""></span>
                     <span class="brand-title">
@@ -197,6 +197,8 @@
                                 </div>
                             </div>
                         </li>
+                    
+                        </li>
                         <li class="icons dropdown d-none d-md-flex">
                             <a href="{% url 'login' %}" class="log-user"  data-toggle="dropdown">
                                 <span>login</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
@@ -236,6 +238,7 @@
                                 </div>
                             </div>
                         </li>
+                        <li><a href="{% url 'dongmoon'  %}" style="padding-left: 0px; padding-right: 15px">동문</a></li><br>
                     </ul>
                 </div>
             </div>
@@ -256,7 +259,7 @@
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Home 1</a></li>
+                            <li><a href="{% url 'home' %}">Home 1</a></li>
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
