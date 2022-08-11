@@ -99,6 +99,22 @@
                 </div>
 
             </div>
+            <div class="col">
+                <label for="careerInterest">관심 직종</label>
+                <input type="text" class="form-control
+                    {% if form.errors.careerInterest %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="관심 직종" aria-label="careerInterest" name="careerInterest"
+                       id="careerInterest" value="{{ form.careerInterest.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.careerInterest %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+
+            </div>
             <div class="col"><label for="major">전공</label>
                 <input type="text" class="form-control
                     {% if form.errors.major %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"

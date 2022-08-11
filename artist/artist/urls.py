@@ -16,5 +16,8 @@ urlpatterns = [
     path('dongmoon/', views.dongmoon, name ='dongmoon'),
 
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
+
+    path('profilesettings/', views.profilesettings, name ='profilesettings'),
+    path('showprofile/', views.showprofile, name ='showprofile'),
     
 ]

@@ -19,6 +19,36 @@ def home(request):
     else:
         return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,})
 
-
 def dongmoon(request):
-    return render(request, 'artistapp/dongmoon.html')
+    print(request.user.university)
+    posts = []
+    temp_posts=Blog.objects.all()
+    for u in  temp_posts:
+        print(u.user.university)
+        if request.user.university == u.user.university:
+            posts.append(u)  
+    return render(request, 'artistapp/dongmoon.html',{'posts':posts})
+
+
+def showprofile(request):
+    return render(request, 'artistapp/showprofile.html')
+
+def profilesettings(request):   
+    if request.method == 'POST'or request.method == 'FILES':
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+          
+            profile=request.FILES.get('photo')
+            form.save()
+            
+            return showprofile(request)
+
+    else:
+        form = CustomUserChangeForm(instance = request.user)  
+                 
+        context = {
+            'form':form,
+            
+        }    
+        return render(request, 'artistapp/profile_settings.html',context)
+       

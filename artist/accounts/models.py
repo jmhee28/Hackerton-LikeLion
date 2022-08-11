@@ -49,7 +49,7 @@ class Informations(models.Model):
         
 class UserManager(BaseUserManager):
     # 일반 user 생성, username 이 userID를 의미함
-    def create_user(self,email,username, name,university, major, address, phone_number, is_student,is_looking_job,is_headhunter,password=None, ):
+    def create_user(self,email,username, name,university, major, address, phone_number  , is_student,is_looking_job,is_headhunter, careerInterest, password=None, ):
         if not username:
             raise ValueError("Users must have an userID.")
         if not name:
@@ -77,6 +77,7 @@ class UserManager(BaseUserManager):
             major = major,
             address = address,
             phone_number = phone_number,
+            careerInterest = careerInterest, 
             is_student = is_student,
             is_looking_job = is_looking_job,
             is_headhunter = is_headhunter,
@@ -124,13 +125,13 @@ class User(AbstractBaseUser):
     is_student = models.BooleanField(choices = position_choices,default=False)
     is_looking_job = models.BooleanField(choices = position_choices,default=False)
     is_headhunter = models.BooleanField(choices = position_choices,default=False)
- 
+    careerInterest = models.CharField(verbose_name='관심분야', max_length=100)
     # is_superuser = models.BooleanField(default=False)
 
     object = UserManager()  # 헬퍼 클래스 사용
 
     USERNAME_FIELD = 'email'  # 로그인 ID로 사용할 필드
-    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number', 'is_student','is_looking_job','is_headhunter'] # 필수 작성 필드
+    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number', 'is_student','is_looking_job','is_headhunter', ' careerInterest', ] # 필수 작성 필드
 
     def __str__(self):
         return self.username
