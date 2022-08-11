@@ -1,36 +1,50 @@
 from django.shortcuts import render
-from ast import Pass
-from django.shortcuts import render, redirect
-from django.contrib import auth
-from django.contrib.auth.models import User
 
-def login(request):
-    #post요청이 들어오면 로그인 처리를 해줌
-    if request.method == 'POST':
-        userid = request.POST['username']
-        pwd = request.POST['password']
-        user = auth.authenticate(request, username=userid, password=pwd)
-        if user is not None:
-            auth.login(request, user)
-            return redirect("home")
-        else:
-            return render(request, 'login.html')
-    #get 요청이 들어오면 login form을 담고 있는 login.html을 띄어주는 역할을 함\
-    else:
-        return render(request, 'login.html')
+# Create your views here.
+from datetime import timedelta
+
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import LoginView
+from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
+
+from accounts.decorators import keep_login
+from accounts.forms import UserForm
+from artistapp.views import home
+from django.contrib.auth import login, authenticate, logout
+
+from django.utils.decorators import method_decorator
 
 
 def signup(request):
-    if request.method == 'POST':
-        if request.POST['password1'] == request.POST['password2']:
-            #회원가입
-            user = User.objects.create_user(
-                                            username=request.POST['username'],
-                                            password=request.POST['password1'],
-                                           )
-            #로그인
-            auth.login(request, user)
-            #홈 리다이렉트
-            return redirect('/')
-        return render(request, 'signup.html')
-    return render(request, 'signup.html')
+    """
+    계정 생성
+    """ 
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data['email']
+            raw_password = form.cleaned_data['password1']
+            email = authenticate(username= email, password=raw_password)
+            login(request, email)
+            return home(request)    
+    else:
+        form = UserForm()
+    return render(request, 'accounts/signup.html', {'form': form})
+
+
+def page_not_found(request, exception):
+    """
+    404 Page not found
+    """
+    return render(request, 'accounts/404.html', {})
+
+
+class CustomLoginView(LoginView):
+    template_name = 'accounts/login.html'
+        
+    @method_decorator(keep_login)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
