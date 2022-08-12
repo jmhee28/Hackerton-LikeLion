@@ -1,3 +1,14 @@
+# 수정된 사항
+1. 가장 마지막으로 수정된 사항-> project1 파일에 있음
+2. style.css와 images/users 사진들, job-hunt.html, profile-setting(new). (크게 총 4개)
+
+# **수정할 사항**
+
+1. 페이지마다 버튼 클릭시 다른 .html로 이동 구현
+2. 옆에 내비바 접었다 폈다 할 때 오른쪽 탭 공백 유지
+3. profile-settings.html 장고로 연결하는 과정에서 밑에 "파일 업로드" 부분이 제대로 연결 안됨. 
+
+
 # Hackerton-LikeLion
 
 (1. 2. 는 ~/Hackerton-LikeLion 에서)
@@ -17,8 +28,4 @@
 
 #**프론트 분들 html, css, js 같은거 올릴때 프로젝트 안에서 적용해보고 돌려보고 git에 올려주세요!**
 
-# **수정할 사항**
 
-1. 페이지마다 버튼 클릭시 다른 .html로 이동 구현
-2. 옆에 내비바 접었다 폈다 할 때 오른쪽 탭 공백 유지
-3. profile-settings.html 장고로 연결하는 과정에서 밑에 "파일 업로드" 부분이 제대로 연결 안됨. 
