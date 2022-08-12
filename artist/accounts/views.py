@@ -42,7 +42,7 @@ def page_not_found(request, exception):
 
 
 class CustomLoginView(LoginView):
-    template_name = 'accounts/login.html'
+    template_name = 'accounts/login0.html'
         
     @method_decorator(keep_login)
     def dispatch(self, request, *args, **kwargs):
