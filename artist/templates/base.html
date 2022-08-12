@@ -208,8 +208,8 @@
                        
                         <li class="icons dropdown d-none d-md-flex">
                             {% if user.is_authenticated %}
-                              <span class="name mt-3">이름: {{ user.username }}</span> 
                               <a href="{% url 'dongmoon'  %}" >동문</a>
+                              <span class="name mt-3">이름: {{ user.username }}</span> 
                         </li>
                         <li class="icons dropdown">
                             <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
