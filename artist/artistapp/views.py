@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     if not request.user.is_authenticated:
-        posts=Blog.objects.all()
+         return render(request, 'accounts/login.html')
     else:
         posts=Blog.objects.filter(user=request.user)
     fields=CategoryTree.objects.all()
@@ -18,6 +18,23 @@ def home(request):
         return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
     else:
         return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,})
+
+def write(request):
+    if request.method =='POST'or request.method == 'FILES':
+        post=Blog()
+        post.title=request.POST['title']
+        post.body=request.POST['body']
+        post.category1=request.POST['category1']
+        post.tag=request.POST['tag']
+        post.photo=request.FILES.get('photo')
+        if request.user.is_authenticated:
+            post.user=request.user
+        post.date=timezone.now()
+        post.save()
+        return redirect('/')
+
+    else:
+        return render(request, 'artistapp/post.html')
 
 def dongmoon(request):
     print(request.user.university)
@@ -47,8 +64,7 @@ def profilesettings(request):
         form = CustomUserChangeForm(instance = request.user)  
                  
         context = {
-            'form':form,
-            
+            'form':form,            
         }    
         return render(request, 'artistapp/profile_settings.html',context)
        

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/css/post.css">
+    <title>포스팅 페이지</title>
+</head>
+<body>
+    <div class="container">      
+       
+        
+          <div class="details-modal" style="width: 600px;">
+            <div class="details-modal-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="black" />
+              </svg>
+            </div>
+
+            <!-- 팝업 내용 -->
+            <div class="details-modal-title" style="padding-bottom: 10px;">
+              <h1>포스팅하기</h1>
+            </div>
+            <div class="details-modal-content">
+                
+                <input type="text" id="title_post" placeholder="제목을 입력하세요." class="form-control" style="margin-bottom: 10px;">
+
+                <div>
+                    <textarea id="description" placeholder="작품에 대해 공유하고 싶은 내용을 써주세요." class="form-control"></textarea>
+                </div>
+
+                <div class="hashtag_post">
+                    <button type="button" id="hashtag_button">해시태그 추가하기</button>
+                </div>
+
+                <div class="post_type">
+                    <input type="file" id="post_btn">
+                </div>
+
+                
+              
+            </div>
+          </div>
+      
+      </div>
+</body>
+</html>

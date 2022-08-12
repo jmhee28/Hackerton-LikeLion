@@ -10,7 +10,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField()
     category1 = models.CharField(max_length=100, null=True)
-    category2 = models.CharField(max_length=100, null=True)
+    tag = models.CharField(max_length=100, blank=True)
     photo = models.ImageField(blank=True, null=True, upload_to='blog_photo')
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
@@ -20,11 +20,11 @@ class Blog(models.Model):
 
 class CategoryTree(models.Model): 
     category1 = models.CharField(max_length=100)
-    category2 = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.category2
+        return self.category1
 
 class Comment(models.Model): 
     comment = models.CharField(max_length=200)
