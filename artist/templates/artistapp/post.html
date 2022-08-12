@@ -20,10 +20,18 @@
             </div>
 
             <!-- 팝업 내용 -->
+            
             <div class="details-modal-title" style="padding-bottom: 10px;">
               <h1>포스팅하기</h1>
             </div>
             <div class="details-modal-content">
+              <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input type="submit" value="새 글 작성하기">
+            </form>
                 
                 <input type="text" id="title_post" placeholder="제목을 입력하세요." class="form-control" style="margin-bottom: 10px;">
 
