@@ -24,7 +24,12 @@ urlpatterns = [
     path('write/', views.write, name ='write'),
 
     path('mypage/', views.mypage, name ='mypage'),
+
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
+
     path('detail/<int:blog_id>', views.detail, name='detail'),
+    
     path('create_comment/<int:blog_id>', views.create_comment, name='create_comment'),
+
+     path('showuserPost/<int:user_id>', views.showuserPost, name ='showuserPost'),
 ]

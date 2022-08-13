@@ -87,15 +87,26 @@ def write(request):
     else:
         return render(request, 'artistapp/post.html')
 
+def showuserPost(request, user_id):
+    user_= get_object_or_404(User, pk=user_id)
+    #print(user_i)
+    posts=Blog.objects.filter(user=user_)
+    fields=CategoryTree.objects.all()    
+    info=Individual_info()
+    info=Individual_info.objects.filter(user=user_)
+    return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
+
 def dongmoon(request):
     print(request.user.university)
-    posts = []
-    temp_posts=Blog.objects.all()
-    for u in  temp_posts:
-        print(u.user.university)
-        if request.user.university == u.user.university:
-            posts.append(u)  
-    return render(request, 'artistapp/dongmoon.html',{'posts':posts})
+    users = []
+    
+    temp_users=get_user_model().object.all()
+    print(temp_users.count())
+    for u in  temp_users:
+        print(u.university)
+        if request.user.university == u.university:
+            users.append(u)  
+    return render(request, 'artistapp/dongmoon.html',{'users':users})
 
 
 def showprofile(request):

@@ -9,7 +9,13 @@
     <div class="box">
         <div class="body">
             <div class="imgContainer">
+                {% if post.photo_set.first %}
+                일단 이렇게 해놨는데 img 가 안뜸 왜그러지..
+                <img src="{{ post.photo_set.first.image.url }}" alt="">
+                {% else %}
+                
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb7UpO5ihznkH0OCGZ-aw7dIq8i2m3DQe1xw&usqp=CAU" alt="">
+                {% endif %}
             </div>
             <div class="content d-flex flex-column align-items-center justify-content-center">
                 <div>
@@ -17,7 +23,7 @@
                     <p class="fs-6 text-white">{{post.user.username}}</p>
                     <p class="fs-6 text-white">{{post.body}}
                     </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                    <a href="{% url 'showuserPost' post.user.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                     
                 </div>
             </div>
