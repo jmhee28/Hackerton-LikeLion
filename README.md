@@ -1,6 +1,8 @@
 # project2 들어가세요..
 
 # 수정된 사항
+1. project2 들어가세요
+-------------------------------------------------------------------
 1. 가장 마지막으로 수정된 사항-> project2 파일에 있음
 2. style.css와 images/users 사진들, job-hunt.html, profile-setting(new).html (크게 총 4개)
   - 아예 새로운 파일: job-hunt.html, profile-setting(new).html & 이미지파일
