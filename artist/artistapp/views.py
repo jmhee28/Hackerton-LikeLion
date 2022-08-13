@@ -97,7 +97,7 @@ def showuserPost(request, user_id):
     return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
 
 def dongmoon(request):
-    print(request.user.university)
+    university =request.user.university
     users = []
     
     temp_users=get_user_model().object.all()
@@ -106,7 +106,7 @@ def dongmoon(request):
         print(u.university)
         if request.user.university == u.university:
             users.append(u)  
-    return render(request, 'artistapp/dongmoon.html',{'users':users})
+    return render(request, 'artistapp/dongmoon.html',{'users':users,'university':university})
 
 
 def showprofile(request):
@@ -115,11 +115,12 @@ def showprofile(request):
 def profilesettings(request):   
     if request.method == 'POST'or request.method == 'FILES':
         form = CustomUserChangeForm(request.POST, instance=request.user)
+       
         if form.is_valid():
-          
-            profile=request.FILES.get('photo')
-            form.save()
             
+            #profile=request.FILES.get('photo')
+            form.save()
+            print("valid")
             return showprofile(request)
 
     else:

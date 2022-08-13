@@ -5,7 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/동문.css' %}">
     <section id="team" class="pb-5">
         <div class="container">
-            <h5 class="section-title h1">ALUMNUS</h5>
+            <h5 class="section-title h1">ALUMNUS for {{university}} </h5>
+        <!-- {{university}} = 사용자 대학명 -->
             <div class="row">
                 {% for user in users %}
                 <!-- Team member -->
