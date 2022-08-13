@@ -7,9 +7,27 @@ from django.contrib.auth.decorators import login_required
 
 
 
+def likes(request, article_pk):
+    if request.user.is_authenticated:
+        post = get_object_or_404(Blog, pk=article_pk)
+
+        if post.like_users.filter(pk=request.user.pk).exists():
+            post.like_users.remove(request.user)
+        else:
+            post.like_users.add(request.user)
+        return redirect('singlepost',article_pk )
+    return redirect('accouts/login.')
 
 
+def singlepost(request, post_id):       
+    single_post = get_object_or_404(Blog, pk=post_id)
+    post_comments = Comment.objects.filter(post=post_id)
+    post_photos = Photo.objects.filter(post=post_id)
 
+    if post_comments:
+        return render(request, 'artistapp/single-post.html', {'single_post':single_post,"post_id":post_id, "post_comments":post_comments, "post_photos": post_photos })
+    else:
+        return render(request, 'artistapp/single-post.html', {'single_post':single_post, "post_id":post_id, "post_photos": post_photos})
 
 def home(request):
     if not request.user.is_authenticated:
@@ -96,14 +114,7 @@ def showuserPost(request, user_id):
     info=Individual_info.objects.filter(user=user_)
     return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
 
-def singlepost(request, post_id):       
-    single_post = get_object_or_404(Blog, pk=post_id)
-    post_comments = Comment.objects.filter(post=post_id)
-    post_photos = Photo.objects.filter(post=post_id)
-    if post_comments:
-        return render(request, 'artistapp/single-post.html', {'single_post':single_post,"post_id":post_id, "post_comments":post_comments, "post_photos": post_photos})
-    else:
-        return render(request, 'artistapp/single-post.html', {'single_post':single_post, "post_id":post_id, "post_photos": post_photos})
+
 
 def dongmoon(request):
     university =request.user.university

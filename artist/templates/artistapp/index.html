@@ -7,13 +7,11 @@
     {% if posts %}
     {% for post in posts %}
     <div class="box">
-        <a href="{% url 'singlepost' post.id %}">포스트 보기</a>
         <div class="body">
           
             <div class="imgContainer">
                 
                 {% if post.photo_set.first %}
-                일단 이렇게 해놨는데 img 가 안뜸 왜그러지..
                 <img src="{{ post.photo_set.first.image.url }}" alt="">
                 {% else %}
                 
@@ -26,7 +24,7 @@
                     <p class="fs-6 text-white">{{post.user.username}}</p>
                     <p class="fs-6 text-white">{{post.body}}
                     </p>
-                    <a href="{% url 'showuserPost' post.user.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                    <a href="{% url 'singlepost' post.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                     
                 </div>
             </div>

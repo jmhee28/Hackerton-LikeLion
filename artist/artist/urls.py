@@ -38,5 +38,7 @@ urlpatterns = [
     path('singlepost/', views.singlepost, name ='singlepost'),
 
     path('singlepost/<int:post_id>', views.singlepost, name ='singlepost'),
+
+    path('<int:article_pk>/likes/', views.likes, name='likes'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,6 +8,7 @@ User = settings.AUTH_USER_MODEL
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_articles')
     body = models.TextField()
     category1 = models.CharField(max_length=100, null=True)
     tag = models.CharField(max_length=100, blank=True)
@@ -16,6 +17,7 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Photo(models.Model):
     post = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
