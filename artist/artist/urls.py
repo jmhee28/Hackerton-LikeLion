@@ -4,7 +4,8 @@ from artistapp import views
 from accounts import views as accounts_views
 from accounts.views import CustomLoginView
 from django.contrib.auth import views as auth_views
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -31,5 +32,11 @@ urlpatterns = [
     
     path('create_comment/<int:blog_id>', views.create_comment, name='create_comment'),
 
-     path('showuserPost/<int:user_id>', views.showuserPost, name ='showuserPost'),
+    
+    path('showuserPost/<int:user_id>', views.showuserPost, name ='showuserPost'),
+
+    path('singlepost/', views.singlepost, name ='singlepost'),
+
+    path('singlepost/<int:post_id>', views.singlepost, name ='singlepost'),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

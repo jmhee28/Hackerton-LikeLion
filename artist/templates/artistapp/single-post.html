@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href='{% static "/css/single-post.css" %}' rel="stylesheet">
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container_single">
+        <div>
+          <div data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">{{single_post.category2}} 게시판</span> <span class="mx-1">&bullet;</span> <span>{{single_post.date}}</span></div>
+              <h1 class="mb-5">{{single_post.title}}</h1>
+            
+
+              <figure class="my-4">
+                {% for post_photo in post_photos %}
+              
+                <img src="{{ post_photo.image.url }}" style="display: block; margin: 10px auto; max-width : 700px;" alt="" class="img-fluid">
+              
+                {% endfor %}
+                <!--<figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>-->
+              </figure>
+              <div style="text-align: center;">
+              <p>{{single_post.body}}</p>
+            </div>
+           
+              <div style="text-align: right;"> <h5 class="comment-title py-4" name ="user_inform">Written by, <a href="{% url 'showuserPost' single_post.user.id %}" >{{single_post.user}}</a></h5></div>
+        
+
+            </div><!-- End Single Post Content -->
+
+            <!-- ======= Comments ======= -->
+            
+            <div class="comments">
+              <h5 class="comment-title py-4">Comments:</h5>
+              {% for post_comment in post_comments %}
+              <div class="comment d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <div class="avatar avatar-sm rounded-circle">
+                    <img class="avatar-img" src='{% static "/img/person-5.jpg" %}' alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 ms-sm-3">
+                  <div class="comment-meta d-flex align-items-baseline">
+                    <h6 class="me-2">{{post_comment.user}}</h6>
+                    <span class="text-muted">{{post_comment.date}}</span>
+                  </div>
+                  <div class="comment-body">
+                    {{post_comment.comment}}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+   
+
+
+
+
+            <div class="comment_l">
+                <form action="{% url 'create_comment' post_id %}" method="POST">
+                  {% csrf_token %}
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-name"></label>
+                    
+                  </div>
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-email"></label>
+                    
+                  </div>
+                  <div class="col-12 mb-3">
+                    <!-- 코멘트본문 -->
+                    <div class="col-lg-12">
+                      <p class="comment-title">댓글 작성</p>
+                      <div class="row">
+                    <label for="comment-message"></label>
+                    <textarea class="form-control" name="comment" id="comment-message" placeholder="댓글을 입력하세요!" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="btn_comment">
+                    <input type="submit" class="btn btn-color" value="작성하기">
+                  </div>
+                </form>
+
+                </div>
+              </div>
+            </div><!-- End Comments Form -->
+    </section>
+  </main><!-- End #main -->
+  <style>
+    .btn-color {
+        border-radius: 50px;
+        color: #fff;
+        background-image: linear-gradient(to right, #4fdcff, #D500F9);
+        padding: 15px;
+        cursor: pointer;
+        border: none !important;
+        margin-top: 20px;
+        height: auto;
+    }
+    </style>
+{% endblock %}
