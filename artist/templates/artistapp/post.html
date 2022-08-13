@@ -25,18 +25,15 @@
               <h1>포스팅하기</h1>
             </div>
             <div class="details-modal-content">
-              <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table>
-                    {{ form.as_table }}
-                </table>
-                <input type="submit" value="새 글 작성하기">
-            </form>
-                
-                <input type="text" id="title_post" placeholder="제목을 입력하세요." class="form-control" style="margin-bottom: 10px;">
+              <form action="{% url 'write' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}   
+                <select name="category1" onchange="categoryChange(this)">
+                  <option selected="selected" value="일반포스트">일반포스트</option>
+                </select>
+                <input type="text" id="title_post"  name="title" placeholder="제목을 입력하세요." class="form-control" style="margin-bottom: 10px;">
 
                 <div>
-                    <textarea id="description" placeholder="작품에 대해 공유하고 싶은 내용을 써주세요." class="form-control"></textarea>
+                    <textarea id="description" name="body" placeholder="작품에 대해 공유하고 싶은 내용을 써주세요." class="form-control"></textarea>
                 </div>
 
                 <div class="hashtag_post">
@@ -44,10 +41,11 @@
                 </div>
 
                 <div class="post_type">
-                    <input type="file" id="post_btn">
+                    <input type="file" name="photo" id="post_btn"  multiple>
                 </div>
 
-                
+                <input type="submit" value="새 글 작성하기">
+              </form>
               
             </div>
           </div>

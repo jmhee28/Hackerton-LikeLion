@@ -67,13 +67,22 @@ def write(request):
         post.title=request.POST['title']
         post.body=request.POST['body']
         post.category1=request.POST['category1']
-        post.tag=request.POST['tag']
-        post.photo=request.FILES.get('photo')
+        #post.tag=request.POST['tag']
         if request.user.is_authenticated:
             post.user=request.user
         post.date=timezone.now()
         post.save()
+        for img in request.FILES.getlist('photo'):
+            # Photo 객체를 하나 생성한다.
+            photo = Photo()
+            # 외래키로 현재 생성한 Post의 기본키를 참조한다.
+            photo.post = post
+            # imgs로부터 가져온 이미지 파일 하나를 저장한다.
+            photo.image = img
+            # 데이터베이스에 저장
+            photo.save()          
         return redirect('/')
+        
 
     else:
         return render(request, 'artistapp/post.html')

@@ -11,12 +11,15 @@ class Blog(models.Model):
     body = models.TextField()
     category1 = models.CharField(max_length=100, null=True)
     tag = models.CharField(max_length=100, blank=True)
-    photo = models.ImageField(blank=True, null=True, upload_to='blog_photo')
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title
+
+class Photo(models.Model):
+    post = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
+    image = models.ImageField(upload_to='blog_photo', blank=True, null=True)
 
 class CategoryTree(models.Model): 
     category1 = models.CharField(max_length=100)

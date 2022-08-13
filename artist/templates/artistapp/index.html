@@ -2,41 +2,10 @@
 {% load static %}
 {% block content %}
 
+                
 <div class="container d-flex align-items-center justify-content-center flex-wrap">
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://images.pexels.com/photos/3601422/pexels-photo-3601422.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSggsWUAU2nt8HkY9wynOz-FbgthVS55LlAbg&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">조명</h3>
-                    <p class="fs-6 text-white">user2</p>
-                    <p class="fs-6 text-white">빛의 3원색 어쩌고 ~~~~~~~ 반사되는~~
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    {% if posts %}
+    {% for post in posts %}
     <div class="box">
         <div class="body">
             <div class="imgContainer">
@@ -44,9 +13,9 @@
             </div>
             <div class="content d-flex flex-column align-items-center justify-content-center">
                 <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
+                    <h3 class="text-white fs-5">{{post.title}}</h3>
+                    <p class="fs-6 text-white">{{post.user.username}}</p>
+                    <p class="fs-6 text-white">{{post.body}}
                     </p>
                     <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                     
@@ -54,158 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEw-yUqeIVQLf_FCcHdcnB9DIhSEqjx64kYg&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGuXpeoqwLtD9n8SOvkAHFPmmeLk2bgyOV4Q&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBIIFPQ5s_P-6mnhOksYSP1tQN8qurk46uWQ&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXg75HT5z7qfac3j3T4IvLti0B8D-EUZMaTw&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA_VQviZgKdKKXQUKHh3-KIfViPb_KV0QO8A&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPi25svwoinmtA85P0n4zU32QLNM3-FWTeNA&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://images.pexels.com/photos/3601422/pexels-photo-3601422.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSggsWUAU2nt8HkY9wynOz-FbgthVS55LlAbg&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="box">
-        <div class="body">
-            <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb7UpO5ihznkH0OCGZ-aw7dIq8i2m3DQe1xw&usqp=CAU" alt="">
-            </div>
-            <div class="content d-flex flex-column align-items-center justify-content-center">
-                <div>
-                    <h3 class="text-white fs-5">바다</h3>
-                    <p class="fs-6 text-white">user1</p>
-                    <p class="fs-6 text-white">이 바다는 제가 작년에 ~~~가서 영감을 받아 어쩌고
-                    </p>
-                    <a href="https://www.naver.com/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
