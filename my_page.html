@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- 폰트어썸 사용 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/my_page.css" rel="stylesheet">
+   
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-email-outline"></i>
+                                <span class="badge badge-pill gradient-1">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">3 New Messages</span>  
+                                    <a href="javascript:void()" class="d-inline-block">
+                                        <span class="badge badge-pill gradient-1">3</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Saiful Islam</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Adam Smith</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Can you do me a favour?</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Barak Obama</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Hilari Clinton</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hello</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>  
+                                    <a href="javascript:void()" class="d-inline-block">
+                                        <span class="badge badge-pill gradient-2">5</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Dutch</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="./images/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
+                                            </a>
+                                        </li>
+                                        
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <!-- 프로필 구역 -->
+        <div class="container">
+            
+                <!-- Column -->
+                <div class="card_p">
+                    <div class="card-body little-profile text-center">
+                        <div class="pro-img mb-1"><img id="pro_img" src="./images/User profile_.png" alt=""></div>
+                        <h3 class="mb-3">JungHwan Lee</h3> 
+                        <p class="mb-1" id="occupation">일러스트레이터 / 그래픽 디자이너</p>
+                        <!-- <p class="mb-1"><img src="./images/대학 로고.png" style="width: 20px;">성균관대학교</p> -->
+                        
+                        <div class="tag" id="first">
+                            #캐릭터 일러스트
+                        </div>
+                          
+                        <div class="tag" id="second">
+                            #브랜드 마케팅
+                        </div>
+
+                        <div class="tag" id="third">
+                            #IP 콘텐츠 일러스트
+                        </div>
+
+                        <!-- <ul style="margin-top: 10px;">
+                            <li> 게시물 <span class="profile-stat-count">164</span></li>
+                            <li> 1촌 <span class="profile-stat-count">54</span></li>
+                        </ul> -->
+                        
+                        <!-- hover시 or 클릭시 > 더 자세한 구직정보 팝업 계획 -->
+                        <div class="l4j">
+                            <img src="./images/briefcase_.png" style="width: 20px; margin-right:5px; margin-bottom: 4px;">구직중
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- 게시물 구역 -->
+        
+        <!-- 여기서부터 tab bar -->
+        <div class="card_tab">
+            <div class="card-header">
+                <ul class="nav nav-tabs justify-content-center" style="margin-left: 0px;" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                        Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                        Profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="card-body">
+                <!-- Tab panes -->
+                    <div class="tab-content">
+                    <div class="tab-pane active" id="home" role="tabpanel">
+                        
+                        <!-- 이곳은 전시장 -->
+                        <div class='main-container'>
+                            <div class='grid-container'>
+                              <div class='card card--2x'>
+                                <!-- 그냥 포스트 화면 -->
+                                <div class='card__image'>
+                                    <img src='https://images.pexels.com/photos/908713/pexels-photo-908713.jpeg?auto=compress&cs=tinysrgb&w=600'>
+                                </div>
+                                <!-- 마우스 hover시 화면 -->
+                                <div class="gallery-item-type" style="left: 0px;">
+                                    <div class="gallery-item-info">
+                                        <ul>
+                                            <p style="float: top; color: white; font-size: 30px;">Rabbit</p>
+                                            <li class="gallery-item-likes"><img src="./images/icon _heart_.png"></i> 56</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://i.pinimg.com/236x/90/7f/41/907f41bb006b93a60cdc76e00ce53e91.jpg'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://i.pinimg.com/236x/17/ff/b1/17ffb17f444ad908645a09108a02d8c4.jpg'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/1561020/pexels-photo-1561020.jpeg?auto=compress&cs=tinysrgb&w=600'>
+                                </div>
+                              </div>
+                              <div class='card card--horizontal'>
+                                <div class='card__image'>
+                                  <img src='https://i.pinimg.com/236x/c9/c6/13/c9c613d7d86e916a8c6dd315fb3d2a4c.jpg'>
+                                </div>
+                              </div>
+                              <div class='card card--featured'>
+                                <div class='card__side-by-side--m'>
+                                  <div class='card__image'>
+                                    <img src='https://images.pexels.com/photos/1125278/pexels-photo-1125278.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                  </div>
+                                  <div class='card__content padding-large--l'>
+                                    <h2>Quisque volutpat.</h2>
+                                    <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.</p>
+                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                    <div class='card__button'>More...</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class='card card--vertical'>
+                                <div class='card__image'>
+                                  <img src='https://i.pinimg.com/236x/25/1b/53/251b53925e47898e860ffd2a6017d623.jpg'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card card--horizontal'>
+                                <div class='card__side-by-side'>
+                                  <div class='card__image'>
+                                    <img src='https://images.pexels.com/photos/885880/pexels-photo-885880.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                  </div>
+                                  <div class='card__content'>
+                                    <h3>Lorem ipsum</h3>
+                                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class='card card--vertical'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/450597/pexels-photo-450597.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/269923/pexels-photo-269923.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__content'>
+                                  <p><em>We wander for distraction, but we travel for fulfilment.</em></p>
+                                  <p>— Hilaire Belloc</p>
+                                </div>
+                              </div>
+                              <div class='card card--2x'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/247929/pexels-photo-247929.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card card--horizontal card--frameless'>
+                                <div class='card__content big-script'>
+                                  <p>Bon voyage</p>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card card--horizontal'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__content'>
+                                  <p><em>A good traveller has no fixed plans and is not intent on arriving.</em></p>
+                                  <p>— Lao Tzu</p>
+                                </div>
+                              </div>
+                              <div class='card'>
+                                <div class='card__image'>
+                                  <img src='https://images.pexels.com/photos/386007/pexels-photo-386007.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <!-- 경력사항 입력란 -->
+                    <div class="tab-pane" id="profile" role="tabpanel">
+                        
+                        <div class='profile-container'>
+                                <div class='card'>
+                                    <div class='card__content'>
+                                      <h2 style="font-weight: bold;">소개</h2>
+                                      <p style="font-weight: bold;">감성이 풍부한 조형 디자이너<br>
+                                        제너레이티브 디자인을 이용한 제품 디자인과 조형 발상<br>
+                                        공감하는 디자이너</p>
+                                      <a href="https://www.naver.com"> #조형예술</a>
+                                      <span>
+                                        <a href="https://www.naver.com"> #조각</a>
+                                      </span>
+                                      <span>
+                                        <a href="https://www.naver.com"> #소조</a>
+                                      </span>
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <div class='card__content'>
+                                        <h2 style="font-weight: bold;">학력</h2>
+        
+                                        <div class="school" style="background: #BDBDBD;">
+                                            <img class="profile" src="https://www.skku.edu/_res/skku/img/sub/symbol2_img14.png">
+                                        </div>
+                                        <span><p style="font-weight: bold; font-size : 18px">
+                                            성균관대학교<br>SungKyunKwan University<br>
+                                        </p></span>
+                                        
+                                        <hr/>
+                                        <p>
+                                            디자인 학과 학사 졸업 <br/>
+                                            2012년 ~ 2017년
+                                        </p>
+                                        
+        
+        
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <div class='card__content'>
+                                        <h2 style="font-weight: bold;">보유 기술</h2>
+                                        <ul style="font-size: 17px;">
+                                            <li>UI/UX Design</li>
+                                            <li>Experience Design</li>
+                                            <li>문화예술사 자격증 취득</li>
+                                            
+                                        </ul> 
+                                    </div>
+                                </div>
+        
+                                <div class='card'>
+                                    <div class='card__content'>
+                                        <h2 style="font-weight: bold;">경력</h2>
+                                        <div>
+                                            <div>
+                                                <div class="school" style="background: #BDBDBD;">
+                                                    <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXaXBIPiVMRELwooduRrecObA1Y1o5CmUhgg&usqp=CAU">
+                                                </div>
+                                                <br><span style="margin-left: 11px; font-size: 20px;">현우조형예술연구소</span>
+        
+                                            </div>
+                                            <hr/>
+                                            <p style="font-size: 17px; margin-left: 30px;">
+                                                정규직<br>
+                                                2019년 3월 - 2020년 2월 (11개월)
+                                            </p>
+        
+                                            <div>
+                                                <div class="school" style="background: #BDBDBD;">
+                                                    <img class="profile" src="data:image/jpeg;base64,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">
+                                                </div>
+                                                <br><span style="margin-left: 11px; font-size: 20px;">미술과 조형</span>
+                                            </div>
+                                            <hr/>
+                                            <p style="font-size: 17px; margin-left: 30px;">
+                                                인턴십<br>
+                                                2021년 1월 - 2021년 9월 (8개월)
+                                            </p>
+        
+                                            <div>
+                                                <div class="school" style="background: #BDBDBD;">
+                                                    <img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIuM9T0UPYFJ3nthb3LqCBAntiCLY48GLr3Q&usqp=CAU">
+                                                </div>
+                                                <br><span style="margin-left: 11px; font-size: 20px;">Akit Product Design Team Lead</span>
+                                            </div>
+                                            <hr/>
+                                            <p style="font-size: 17px; margin-left: 30px;">
+                                                정규직<br>
+                                                2021년 10월 - 현재 (10개월)
+                                            </p>
+                                        </div>
+                                        
+                           
+                                    </div>
+                                </div>
+                                
+                                <div class='card'>
+                                    <div class='card__content'>
+                                        <h2 style="font-weight: bold;">관심분야</h2>
+                                        <div>
+                                            <div class="school" style="background: #BDBDBD;">
+                                                <img class="profile" src="https://us.123rf.com/450wm/anatolir/anatolir1901/anatolir190102320/126144358-%EC%83%81%EC%9C%84-%EB%B7%B0-%ED%8F%AC%ED%84%B0-%ED%9C%A0-%EC%95%84%EC%9D%B4%EC%BD%98%EC%9E%85%EB%8B%88%EB%8B%A4-%ED%9D%B0%EC%83%89-%EB%B0%B0%EA%B2%BD%EC%97%90-%EA%B3%A0%EB%A6%BD-%EB%90%9C-%EC%9B%B9-%EB%94%94%EC%9E%90%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B0%9C%EC%9A%94-%ED%8F%89%EB%A9%B4%EB%8F%84-%ED%8F%AC%ED%84%B0-%ED%9C%A0-%EB%B2%A1%ED%84%B0-%EC%95%84%EC%9D%B4%EC%BD%98.jpg?ver=6">
+                                            </div>
+                                            <br><span style="margin-left: 11px; font-size: 20px;"><a href="https://www.naver.com">  조형예술단체</a></span>
+                                            <p style="font-size: 12px; margin-left: 30px;">회원 37,800명</p>
+                                        </div>
+                                        
+                                        <hr/>
+                                        <div>
+                                            <div class="school" style="background: #BDBDBD;">
+                                                <img class="profile" src="data:image/png;base64,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">
+                                            </div>
+                                            <br><span style="margin-left: 11px; font-size: 20px;"><a href="https://www.naver.com">Molding Artist Crew</a></span>
+                                            <p style="font-size: 12px; margin-left: 30px;">회원 157,211명</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        
+                            
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+            
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer" style="padding-left: 0px;">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by SKKU Hackaton Project</a></p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>
