@@ -30,6 +30,7 @@
            
             <form action="{% url 'likes' single_post.pk %}" method='POST'>
               {% csrf_token %}
+              <!-- 좋아요 -->
               {% if user in single_post.like_users.all %}
                 <button class="btn btn-link text-danger">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
