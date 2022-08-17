@@ -5,7 +5,9 @@ from django.utils import timezone
 from accounts.forms import *
 from django.contrib.auth.decorators import login_required
 
-
+def chatlist(request):
+    users = User.object.all()
+    return render(request, 'artistapp/chatlist.html',{'users': users})
 
 def likes(request, article_pk):
     if request.user.is_authenticated:
@@ -34,13 +36,13 @@ def home(request):
          return render(request, 'accounts/login.html')
     else:
         posts=Blog.objects.filter(user=request.user)
-    fields=CategoryTree.objects.all()
-    if request.user.is_authenticated:
-        info=Individual_info()
-        info=Individual_info.objects.filter(user=request.user)
-        return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
-    else:
-        return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,})
+        fields=CategoryTree.objects.all()
+        if request.user.is_authenticated:
+            info=Individual_info()
+            info=Individual_info.objects.filter(user=request.user)
+            return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
+        else:
+            return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,})
 
 def mypage(request):
      #블로그 글들을 모조리 띄워주는 코드
