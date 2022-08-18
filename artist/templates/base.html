@@ -107,6 +107,14 @@
                                 </div>
                                 <div class="dropdown-content-body">
                                     <ul>
+                                        <form id="post-form" method="POST" action="checkview">
+                                            {% csrf_token %}
+                                            <label>받는 이</label>
+                                            <input type="text" name="room_name" id="room_name" width="100px" />
+                                            <label>Username</label>
+                                            <input type="text" name="username" id="username" width="100px" />
+                                            <input type="submit" value="Enter Room">
+                                        </form>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
                                                 <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/1.jpg' %}" alt="">

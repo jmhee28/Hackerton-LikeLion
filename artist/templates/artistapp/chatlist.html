@@ -27,19 +27,29 @@
             </div>
             <div class="details-modal-content">
                 <ul>
+                    <form id="post-form" method="POST" action="checkview">
+                        {% csrf_token %}
+                        <label>받는 이</label>
+                        <input type="text" name="room_name" id="room_name" width="100px" />
+                        <label>Username</label>
+                        <input type="text" name="username" id="username" width="100px" />
+                        <input type="submit" value="Enter Room">
+                    </form>
                     {% for user in users %}
                     <li class="notification-unread">
                         <a href="javascript:void()">
                             <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/3.jpg' %}" alt="">
                             <div class="notification-content">
                                 <div class="notification-heading">{{ user.username }}</div>
-                                <div class="notification-timestamp">08 Hours ago</div>
-                                <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                {% if user.is_looking_job == True  %}
+                                <div class="notification-text">*구직중*</div>
+                                {% endif %}
+                                <div class="notification-timestamp">{{ user.major }}</div>
                             </div>
                         </a>
                     </li>
-                    
                     {% endfor %}
+
                     <li class="notification-unread">
                         <a href="javascript:void()">
                             <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/1.jpg' %}" alt="">
