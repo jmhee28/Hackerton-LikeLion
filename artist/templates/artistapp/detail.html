@@ -26,6 +26,6 @@
 <hr>
 <!--댓글 목록-->
 {% for comment in blog_detail.comment_set.all %}
-<p>{{ comment }}</p>
+<p>{{ comment.comment }}</p>
 <hr>
 {% endfor %}

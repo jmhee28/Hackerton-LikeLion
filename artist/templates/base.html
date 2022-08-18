@@ -109,11 +109,11 @@
                                     <ul>
                                         <form id="post-form" method="POST" action="checkview">
                                             {% csrf_token %}
-                                            <label>받는 이</label>
+                                            <label>채팅할 사람</label>
                                             <input type="text" name="room_name" id="room_name" width="100px" />
-                                            <label>Username</label>
+                                            <label>내 이름</label>
                                             <input type="text" name="username" id="username" width="100px" />
-                                            <input type="submit" value="Enter Room">
+                                            <input type="submit" value="채팅 시작">
                                         </form>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
