@@ -2824,7 +2824,7 @@ input[type="button"].btn-block {
     border-left: 1px solid #ced4da;
     border-radius: 0 0.25rem 0.25rem 0; }
 
-    .custom-file-label-new {      /* 추가 */
+  .custom-file-label-new {      /* 추가 */
       position: absolute;
       top: 0;
       right: 0;
@@ -11449,7 +11449,7 @@ table.dataTable thead .sorting::after {
   color: #fff;
   margin-bottom: 5px; }
 
-  .card-widget__title1 {    /* 추가 */
+.card-widget__title1 {    /* 추가 */
     font-size: 20px;
     color: #fff;
     margin-bottom: 2px; }
