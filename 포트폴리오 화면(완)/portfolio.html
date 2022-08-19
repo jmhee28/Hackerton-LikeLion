@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    
+    
+    <!-- 폰트어썸 사용 / 이거는 이 페이지에만 있는 코드 -->
+    <script src="https://kit.fontawesome.com/f573654741.js" crossorigin="anonymous"></script>
+    <!-- Custom Stylesheet -->
+    <link href="portfolio.css" rel="stylesheet">
+
+
+   
+</head>
+
+<body id="portfolio_body">
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-email-outline"></i>
+                                <span class="badge badge-pill gradient-1">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">3 New Messages</span>  
+                                    <a href="javascript:void()" class="d-inline-block">
+                                        <span class="badge badge-pill gradient-1">3</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Saiful Islam</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="notification-unread">
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Adam Smith</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Can you do me a favour?</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Barak Obama</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
+                                                <div class="notification-content">
+                                                    <div class="notification-heading">Hilari Clinton</div>
+                                                    <div class="notification-timestamp">08 Hours ago</div>
+                                                    <div class="notification-text">Hello</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>  
+                                    <a href="javascript:void()" class="d-inline-block">
+                                        <span class="badge badge-pill gradient-2">5</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Dutch</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="./images/1.png" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
+                                            </a>
+                                        </li>
+                                        
+                                        <hr class="my-2">
+                                        <li>
+                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <!-- 포트폴리오 내용 -->
+        <div class="outer_portfolio">
+            <div class="container" id="port">
+                <h1 style="margin-top: 20px;">The Boy in the Field</h1>
+                <p style="margin-bottom: 50px;">AARP 출판사의 스토리북 시리즈 중 하나인 The Boy in the Field의 일러스트를 작업한 내용이다.</p>
+
+                <h2>About The Book</h2>
+                <p>The Boy in the Field은 작가인 John Bond의 유년시절을 바탕으로 한 이야기, 모험과 탐험을 즐기는 어린 아이들의 일화를 동화형식으로 풀어내었다.</p>
+
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/33be4e123417123.60edf5ab5d6b0.png">
+                </div>
+                <h3>들판에 앉아 있는 아이들</h3>
+
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/8fcf98123417123.60f99a3cb4655.png">
+                </div>
+                <h3>Chapter 1 & 2</h3>
+
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/11c5e5123417123.60f99a3caea96.png">
+                </div>
+                <h3 style="margin-bottom: 2px;">Chapter 3 & 4</h3>
+                <p style="margin-bottom: 40px">미지의 인물은 신비감을 부각시키기 위해 창백하고 어두운 톤을 사용.</p>
+
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/8df529123417123.60f99a3cb5eed.png">
+                </div>
+                <h3>Chapter 5 & 6</h3>
+
+                <div class="card">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9f744d123417123.60f99a3cb066d.png">
+                </div>
+                <h3>Chapter 7 & 8</h3>
+
+                <!-- 여기는 댓글 -->
+                <div class="row" id="comment">
+                    <div class="col-lg-7 col-sm-5 col-md-6 col-12 pb-4" id="comment_section">
+                        <i class="fa-solid fa-heart fa-lg like" id="like_btn"></i> 
+                        <i class="fa-solid fa-share fa-lg" id="like_btn"></i>
+                        <i class="fa-solid fa-download fa-lg" id="like_btn"></i>
+                        <input type="text" id="mycomment" placeholder="댓글을 입력하세요">
+                        <div class="comment mt-4 text-justify float-left">
+                            <img src="https://mir-s3-cdn-cf.behance.net/user/115/74137e217494743.5f7465e18453d.jpg" alt="" class="rounded-circle" width="40" height="40">
+                            <h4>synaps410</h4>
+                            <span>- 20 October, 2022</span>
+                            <br>
+                            <p>Amazing how some string, nails, wood, and a lot of patience can make such an awesome piece of art. Great work thank you for sharing the process.</p>
+                        </div>
+                        <div class="text-justify darker mt-4 float-right">
+                            <img src="https://a5.behance.net/2455bddc70bfa3884799f5c1d4ce4298e9b92063/img/profile/avatars/layers-115.png?cb=264615658" alt="" class="rounded-circle" width="40" height="40">
+                            <h4>Rob Simpson</h4>
+                            <span>- 20 October, 2022</span>
+                            <br>
+                            <p>Pretty spectacular! I have never seen one with so many layers. You are a very patient person 😍Beautiful!   I love the colors!</p>
+                        </div>
+                        <div class="comment mt-4 text-justify">
+                            <img src="https://yt3.ggpht.com/ytc/AMLnZu_DJyfDLENrgvIqzOp6GAdrR__1oA5pUYXgbl3t=s88-c-k-c0x00ffffff-no-rj" alt="" class="rounded-circle" width="40" height="40">
+                            <h4>고전책방</h4>
+                            <span>- 20 October, 2022</span>
+                            <br>
+                            <p>오일파스텔의 은은한 꾸덕함 넘 좋네요!! 이런 보랏빛 색 보면 늘 어린 시절 생각이 나는 것 같아요</p>
+                        </div>
+                        <div class="darker mt-4 text-justify">
+                            <img src="https://yt3.ggpht.com/Ab11s3AhrapVsRu2zE9I5xdeOSXB3ee19KrBf1-prEAtgorJar4agZH6rzP7zlFcl0dXNg6y5g=s88-c-k-c0x00ffffff-no-rj" alt="" class="rounded-circle" width="40" height="40">
+                            <h4>얍얍</h4>
+                            <span>- 20 October, 2022</span>
+                            <br>
+                            <p >와...그림 너무예뻐요❤❤❤특히 구름이 너무 퀄리티가 좋네요 팔로우 누르고 갑니다😊😊</p>
+                        </div>
+                    </div>
+                    <!-- 사용자 정보, 팔로우 -->
+                    <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12" id="user_info">
+                        <p>CREATOR</p>
+                        <figure class="fir-image-figure">
+                            <img class="fir-author-image fir-clickcircle" src="User profile_.png" style="width:40px; height:40px;">
+                            <figcaption>
+                              <div class="fig-author-figure-title"><h5>JungHwan Lee</h5></div>
+                              <div class="fig-author-figure-title">IP 콘텐츠 디자이너이자 캐릭터 일러스트레이터</div>
+                            </figcaption>
+                        </figure>
+                        <div class="button_Section" style="margin-top: 20px;">
+                            <button class="bn632-hover bn21"><i class="fa-solid fa-plus"></i> 팔로우</button>
+                            <button class="bn22"><i class="fa-solid fa-paper-plane"></i> 메세지</button>
+                        </div>
+
+                        <div class="user_tool">
+                            <h6 style="margin-top: 20px;">TOOLS</h6>
+                            <div class="tools"><img src="./images/🦆 icon _adobe photoshop_.png"> Photoshop</div>
+                            <div class="tools"><img src="./images/🦆 icon _adobe illustrator_.png">  Illustrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer" style="padding-left: 0px;">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by SKKU Hackaton Project</a></p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>
