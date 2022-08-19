@@ -83,9 +83,9 @@ def home(request):
         if request.user.is_authenticated:
             info=Individual_info()
             info=Individual_info.objects.filter(user=request.user)
-            return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,'info':info})
+            return render(request, 'artistapp/mainfeed.html',{'fields':fields,'posts':posts,'info':info})
         else:
-            return render(request, 'artistapp/index.html',{'fields':fields,'posts':posts,})
+            return render(request, 'artistapp/mainfeed.html',{'fields':fields,'posts':posts,})
 
 def mypage(request):
      #블로그 글들을 모조리 띄워주는 코드

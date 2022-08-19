@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- <link href="./css/동문.css" rel="stylesheet"> -->
+<style>
+ #tag_header{
+  text-align: center;
+  border: 1px solid;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  margin-top: 40px;
+}
+
+.tag{
+  color: black;
+  border-radius: 20px;
+}
+
+
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #fef8f8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__front {      
+  width: 100%;
+  max-height: 330px;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+  border: none;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: black;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+} 
+  
+</style>
+
+  <!--**********************************
+            Content body start
+        ***********************************-->
+        <!-- 태그 섹션 -->
+        <section id="tag_header">
+            <div class="tag">
+                #도서 일러스트
+            </div>
+            
+            <div class="tag">
+                #카툰 그래픽
+            </div>
+
+            <div class="tag">
+                #그래픽 디자인
+            </div>
+
+            <div class="tag">
+                #UI/UX
+            </div>
+        </section>
+
+        <ul class="cards"> 
+            <li>
+                <a href="portfolio.html" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bb8f90123417123.Y3JvcCwxMzcyLDEwNzMsNDQ4LDIzNA.png" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="./images/User profile_.png" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">JungHwan Lee</h3>            
+                        <span class="card__status">도서 일러스트</span>
+                      </div>
+                    </div>
+                    <p class="card__description">"The Boy in the Field" 도서 일러스트</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+              <a href="" class="card">
+                <!-- 대표화면 -->
+                <img src="https://i.pinimg.com/236x/08/80/99/08809940d40530bfdb457d7a60466657.jpg" class="card__front" alt="" />
+                <div class="card__overlay">
+                  <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                    <img class="card__thumb" src="https://yt3.ggpht.com/z5MrIzrAdX0tZho8RvFsY17Wiq6HLKr9aV5nC99lXfOHDIZEh6GmslQ_3QR39GviwFcbnJIDFCg=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                    <div class="card__header-text">
+                      <h3 class="card__title">Jessica Parker</h3>            
+                      <span class="card__status">카툰 그래픽</span>
+                    </div>
+                  </div>
+                  <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                </div>
+              </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://i.pinimg.com/736x/5b/cd/82/5bcd82fff832da1f7676eb264e9b92ec.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/12OS2zYP0INwj85rFctdQaz4gG_jUPO2EEq9kX4eukhKmNw4v9ZvoIL8ZDuDSbN0B4-5t-HlcA=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">Sandia Camila</h3>            
+                        <span class="card__status">카툰 그래픽</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+           
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/f07514150316433.Y3JvcCwxMTkyLDkzMywxMDMsMA.png" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/REMI6pUfULMxEqjPwnUvdMx0IC0c58voNleLp9nxhqyOOGj79ffkum18e7VP901l7zIv4HECr_g=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">민초를 좋아하는 고래</h3>            
+                        <span class="card__status">그래픽 디자인</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/d502bf108224263.5fbde60b7a512.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/ytc/AMLnZu99e2Osx7umgQXX9ebW_BT6CVFTnxfCPE8MQbPR1A=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">김우</h3>            
+                        <span class="card__status">그래픽 디자인</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/5d5187150503079.Y3JvcCwxNzEzLDEzNDAsMTQ0LDA.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/ytc/AMLnZu-7KjaJWamVB3MQ-yax2zDnK51eJs131pl4WCy43Q=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">최오링</h3>            
+                        <span class="card__status">그래픽 디자인</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/989b1b121241227.Y3JvcCw3NzEsNjAzLDYyNiwxNTg.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/ytc/AMLnZu_dSIT4qegLFF2MCLYGgBck8gBA3QYZTxg1eqjf7g=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">Melain .JP</h3>            
+                        <span class="card__status">그래픽 디자인</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/f29797146499471.Y3JvcCwxNzYxLDEzNzgsMCww.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/ylfPZfV9D2u0Getcw_6ulM11DrrDG1CidEWxgO_IUdtcUf80E2hqgceprRy6pKGqJWg2fri-gxQ=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">이얏호응</h3>            
+                        <span class="card__status">앱 UI/UX</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+
+            <li>
+                <a href="" class="card">
+                  <!-- 대표화면 -->
+                  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/5d5187150503079.Y3JvcCwxNzEzLDEzNDAsMTQ0LDA.jpg" class="card__front" alt="" />
+                  <div class="card__overlay">
+                    <div class="card__header">
+                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                      <img class="card__thumb" src="https://yt3.ggpht.com/ytc/AMLnZu9Mj8vCndALeyHpne_CN3zIO1PIoC7YtPV__-sHUQ=s88-c-k-c0x00ffffff-no-rj" alt="" />
+                      <div class="card__header-text">
+                        <h3 class="card__title">조준형</h3>            
+                        <span class="card__status">그래픽 디자인</span>
+                      </div>
+                    </div>
+                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                  </div>
+                </a>      
+            </li>
+          </ul>
+        
+
+            
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+    
+
+
+{% endblock %}
