@@ -96,6 +96,9 @@ def mypage(request):
 def mypage2(request):
     return render(request, 'artistapp/mypage2.html')
 
+def portfolio(request):
+    return render(request, 'artistapp/portfolio.html')
+
 def jobhunt(request):
     return render(request, 'artistapp/job-hunt.html')   
 
