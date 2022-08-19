@@ -2,92 +2,219 @@
 {% load static %}
 {% block content %}
 
-  <main id="main">
-    <section class="single-post-content">
-      <div class="container" data-aos="fade-up">
-          <div class="row gutters">
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-            <div class="h-100">
-              <div class="card-body">
-                <div class="account-settings">
-                  <div class="user-profile">
-                    <div class="user-avatar">
+<div class="container-fluid">
 
-                      <!-- <img src="{{info.photo.url}}" alt="Maxwell Admin" style="display: block; margin: 0px auto; max-width : 700px;"> -->
-                    </div>
-                  </div>
-                  <div class="about">
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div class="h-100">
-              
-              <div class="card-body">
-                <div class="row gutters">
+
+
+                
+  <div class="row justify-content-center">
+      <div class="col-lg-8">
+          <div class="card"style="margin:10%">
+              <div class="card-body" style="padding:7% ">
+
                   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 class="mb-2 text-primary">개인정보</h6>
-                  </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="form-group">
-                      <h2>프로필 수정</h2>
-    
-                      <form action="" method="post" enctype="multipart/form-data">
-                          {% csrf_token %}
-                          <table  >
-                            {{ form.as_table }}      
-                        
-                          </table>
-                          <br>                          
-                          <br>
-                          
-                          <input type="submit">
-                      </form>
-
-                      <input type="file" name="photo" accept="image/*" placeholder="파일 선택"><br>
-                      <div>
-                      <form action="{% url 'profilesettings' %}" method="post" enctype="multipart/form-data"></form>
-                        {% csrf_token %}
-                        
-                      
+                      <h6 class="mb-2 text-primary">개인정보</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h2>프로필 수정<br></h2>
                       </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                      
-                    </div>
-                  </div>
-                  
-                </div>
-                <div>
-                  <div class="btn-pack">
-                    <div class="text-right">
-                    </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-            </div>
-            </div>
+                     
+                  <div class="form-validation" style="padding: 3%" >
+                      <form class="form-valide" action="#" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-username">사용자명: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="text" class="form-control" id="val-username" name="val-username" placeholder="3글자 이상의 사용자명을 입력하세요.">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-password">비밀번호: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="password" class="form-control" id="val-password" name="val-password" placeholder="5글자 이상의 비밀번호를 입력하세요.">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-confirm-password">비밀번호 확인: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="비밀번호를 다시 한 번 입력하세요.">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-university">대학명: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                {{ form.university }}
+                                  <!-- <input type="text" class="form-control" id="val-university" name="val-university" placeholder="ex) OO대학교"> -->
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-major">전공: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="text" class="form-control" id="val-major" name="val-major" placeholder="ex) 컴퓨터공학과">
+                              </div>
+                          </div>
+                          
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-phonenumber">핸드폰번호: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="text" class="form-control" id="val-phonenumber" name="val-phonenumber" placeholder="ex) 000-0000-0000">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-address">주소: 
+                              </label>
+                              <div class="col-lg-8">
+                                  <input type="text" class="form-control" id="val-address" name="val-address" placeholder="주소를 입력하세요.">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-enrollment">재학중인가요?: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <select class="form-control" id="val-enrollment" name="val-enrollment">
+                                      <option value="">선택하세요.</option>
+                                      <option value="html">네</option>
+                                      <option value="css">아니오</option>
+                                    
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-jobhunt">구직중인가요?: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <select class="form-control" id="val-jobhunt" name="val-jobhunt">
+                                      <option value="">선택하세요.</option>
+                                      <option value="html">네</option>
+                                      <option value="css">아니오</option>
+                                    
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-headhunt">헤드헌터인가요?: <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <select class="form-control" id="val-skill" name="val-skill">
+                                      <option value="">선택하세요.</option>
+                                      <option value="html">네</option>
+                                      <option value="css">아니오</option>
+                                    
+                                  </select>
+                              </div>
+                          </div>
+
+
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-interest">관심분야 <br>(복수 선택 가능) <span class="text-danger">*</span>
+                              </label>
+                              <div class="col-lg-8">
+                                  <div class="basic-form">
+                                      <form>
+                                          
+                                          <div class="form-group">
+                                             
+                                                  <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">UI/UX   </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">웹 </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">제품</label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">그래픽 </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">건축 </label>
+                                              </div>
+
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">디스플레이 </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">일러스트레이터</label>
+                                              </div>
+                                          
+                                          
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">개발/엔지니어 </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">패션 </label>
+                                              </div>
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">기타 </label>
+                                              </div>
+                                          
+                                              
+                                              <div class="form-check form-check-inline">
+                                                  <label class="form-check-label">
+                                                      <input type="checkbox" class="form-check-input" value="">없음</label>
+                                              </div>
+
+
+                                              
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <label class="col-lg-4 col-form-label" for="val-headhunt">제출 파일: 
+                              </label>
+                              <div class="col-lg-8">
+                                  <div class="basic-form">
+                                      <form action="#">
+                                          <div class="input-group mb-3">
+                                              <div class="input-group-prepend"><span class="input-group-text">업로드</span>
+                                              </div>
+                                              <div class="custom-file">
+                                                  <input type="file" class="custom-file-input">
+                                                  <label class="custom-file-label-new">파일을 업로드하세요.</label>
+                                              </div>
+                                          </div>
+                                          
+                                      </form>
+                                  </div>
+
+                              </div>
+                          </div>
+
+
+
+
+                      
+                          <div class="submit" style="float:right">
+                              <button type="submit" class="btn btn-dark mb-2">저장하기</button>
+                          </div>
+
+
+                      </form>
+                  </div>
+              </div>
           </div>
       </div>
-    </section>
-  
-  
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      </div>
-    </section>
-  </main><!-- End #main -->
+  </div>
+</div>
 
-  {% endblock %}
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
+{% endblock %}
