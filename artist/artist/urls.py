@@ -26,6 +26,7 @@ urlpatterns = [
 
     path('mypage/', views.mypage, name ='mypage'),
     path('mypage2/', views.mypage2, name ='mypage2'),
+    path('jobhunt/', views.jobhunt, name ='jobhunt'),
 
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
 

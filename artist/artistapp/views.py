@@ -96,6 +96,9 @@ def mypage(request):
 def mypage2(request):
     return render(request, 'artistapp/mypage2.html')
 
+def jobhunt(request):
+    return render(request, 'artistapp/job-hunt.html')   
+
 def detail(request, blog_id):
     # blog_id 번째 블로그 글을 데이터베이스로부터 갖고 와서
     blog_detail = get_object_or_404(Blog, pk=blog_id)
