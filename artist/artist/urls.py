@@ -25,6 +25,7 @@ urlpatterns = [
     path('write/', views.write, name ='write'),
 
     path('mypage/', views.mypage, name ='mypage'),
+    path('mypage2/', views.mypage2, name ='mypage2'),
 
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
 

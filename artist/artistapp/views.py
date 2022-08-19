@@ -93,6 +93,9 @@ def mypage(request):
     posts = Blog.objects.filter().order_by('-date')
     return render(request, 'artistapp/mypage.html', {'posts':posts})
 
+def mypage2(request):
+    return render(request, 'artistapp/mypage2.html')
+
 def detail(request, blog_id):
     # blog_id 번째 블로그 글을 데이터베이스로부터 갖고 와서
     blog_detail = get_object_or_404(Blog, pk=blog_id)
@@ -104,7 +107,6 @@ def detail(request, blog_id):
 
 def create_comment(request, blog_id): 
     filled_form = CommentForm(request.POST)
-
     if filled_form.is_valid():
         finished_form = filled_form.save(commit=False)
         finished_form.post = get_object_or_404(Blog, pk=blog_id)

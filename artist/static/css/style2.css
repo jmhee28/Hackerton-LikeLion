@@ -413,27 +413,27 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 
-/*프로필 부분 css*/
+  /*프로필 부분 css*/
 
 .school {
-  width: 57px;
-  height: 57px; 
-  border-radius: 70%;
-  overflow: hidden;
-  float: left;
+    width: 57px;
+    height: 57px; 
+    border-radius: 70%;
+    overflow: hidden;
+    float: left;
 }
 .profile {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .profile-container {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
 }
-  small,
+small,
 .small {
   font-size: 80%;
   font-weight: 400; }
