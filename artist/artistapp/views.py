@@ -20,7 +20,7 @@ def room(request, room):
         'room_details': room_details
     })
 
-def checkview(request):
+def checkview(request):#채팅 
     room = request.POST['room_name']
     username =  request.POST['username']
 
@@ -164,14 +164,16 @@ def showuserPost(request, user_id):
 def dongmoon(request):
     university =request.user.university
     users = []
-    
+    other_users = []
     temp_users=get_user_model().object.all()
     print(temp_users.count())
     for u in  temp_users:
         print(u.university)
         if request.user.university == u.university:
-            users.append(u)  
-    return render(request, 'artistapp/dongmoon.html',{'users':users,'university':university})
+            users.append(u)
+        else :
+            other_users.append(u)  
+    return render(request, 'artistapp/dongmoon.html',{'users':users,'university':university, 'other_users':other_users })
 
 
 def showprofile(request):

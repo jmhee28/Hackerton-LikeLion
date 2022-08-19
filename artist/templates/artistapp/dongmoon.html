@@ -29,6 +29,23 @@
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">{{user.username}}</h4>
                                         <p class="card-text">{{user.university}} {{user.major}}</p>
+                                        {% if user.is_student%}
+
+                                        <p class="card-text">학생</p>
+
+                                        {% endif %}
+
+                                        {% if user.is_looking_job %}
+
+                                        <p class="card-text">구직 중</p>
+                                        {% endif %}
+
+                                        
+                                        {% if user.is_headhunter %}
+
+                                        <p class="card-text">헤드헌터</p>
+                                        {% endif %}
+
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a href="{% url 'showuserPost' user.id %}" class="social-icon text-xs-center">
@@ -62,6 +79,263 @@
                     </div>
                 </div>
                 <!-- ./Team member -->
+                {% endfor %}
+
+    
+            </div>
+        </div>
+        
+
+
+        <!-- 자신의 대학 외 구직자 -->
+        <div class="container">
+            <h5 class="section-title h1">구직자</h5>
+        <!-- {{university}} = 사용자 대학명 -->
+            <div class="row">
+                {% for other_user in other_users %}
+                {% if other_user.is_looking_job%}
+
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" >
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTAC8dktvYJQg9keui72XgNKhxc9a0UeDMIQ&usqp=CAU" alt="card image"></p>
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        <!-- 클릭하면 그사람 페이지로 들어감 -->
+                                        <a href="{% url 'showuserPost' user.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        {% if other_user.is_student%}
+
+                                        <p class="card-text">학생</p>
+
+                                        {% endif %}
+
+                                        {% if other_user.is_looking_job %}
+
+                                        <p class="card-text">구직 중</p>
+                                        {% endif %}
+
+                                        
+                                        {% if other_user.is_headhunter %}
+
+                                        <p class="card-text">헤드헌터</p>
+                                        {% endif %}
+
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="{% url 'showuserPost' other_user.id %}" class="social-icon text-xs-center">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                {% endif %}
+                {% endfor %}
+
+    
+            </div>
+        </div>
+
+        <!-- 자신의 대학 외 헤드헌터 -->
+        <div class="container">
+            <h5 class="section-title h1">헤드헌터</h5>
+        <!-- {{university}} = 사용자 대학명 -->
+            <div class="row">
+                {% for other_user in other_users %}
+                {% if other_user.is_headhunter%}
+
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" >
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTAC8dktvYJQg9keui72XgNKhxc9a0UeDMIQ&usqp=CAU" alt="card image"></p>
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        <!-- 클릭하면 그사람 페이지로 들어감 -->
+                                        <a href="{% url 'showuserPost' user.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        {% if other_user.is_student%}
+
+                                        <p class="card-text">학생</p>
+
+                                        {% endif %}
+
+                                        {% if other_user.is_looking_job %}
+
+                                        <p class="card-text">구직 중</p>
+                                        {% endif %}
+
+                                        
+                                        {% if other_user.is_headhunter %}
+
+                                        <p class="card-text">헤드헌터</p>
+                                        {% endif %}
+
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="{% url 'showuserPost' other_user.id %}" class="social-icon text-xs-center">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                {% endif %}
+                {% endfor %}
+
+    
+            </div>
+        </div>
+
+        <!-- 자신의 대학 외 학생 -->
+        <div class="container">
+            <h5 class="section-title h1">학생</h5>
+        <!-- {{university}} = 사용자 대학명 -->
+            <div class="row">
+                {% for other_user in other_users %}
+                {% if other_user.is_student%}
+
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip" >
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTAC8dktvYJQg9keui72XgNKhxc9a0UeDMIQ&usqp=CAU" alt="card image"></p>
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        <!-- 클릭하면 그사람 페이지로 들어감 -->
+                                        <a href="{% url 'showuserPost' user.id %}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{other_user.username}}</h4>
+                                        <p class="card-text">{{other_user.university}} {{other_user.major}}</p>
+                                        {% if other_user.is_student%}
+
+                                        <p class="card-text">학생</p>
+
+                                        {% endif %}
+
+                                        {% if other_user.is_looking_job %}
+
+                                        <p class="card-text">구직 중</p>
+                                        {% endif %}
+
+                                        
+                                        {% if other_user.is_headhunter %}
+
+                                        <p class="card-text">헤드헌터</p>
+                                        {% endif %}
+
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="{% url 'showuserPost' other_user.id %}" class="social-icon text-xs-center">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.naver.com/">
+                                                    <i class="fa fa-google"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                {% endif %}
                 {% endfor %}
 
     
