@@ -10,13 +10,14 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
     <!-- Pignose Calender -->
-    <link href="{% static './plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet">
+    <!-- <link href="{% static './plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet"> -->
     <!-- Chartist -->
-    <link rel="stylesheet" href="{% static './plugins/chartist/css/chartist.min.css' %}">
-    <link rel="stylesheet" href="{% static './plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css' %}">
+    <!-- <link rel="stylesheet" href="{% static './plugins/chartist/css/chartist.min.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static './plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/feed.css' %}">
     <!-- Custom Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/my_page.css' %}">
 
 </head>
 
@@ -217,7 +218,11 @@
                         </li>
                        
                         </li>
-                       
+                        <li class="icons dropdown d-none d-md-flex">
+                            
+                              <a href="{% url 'dongmoon'  %}" >구인구직</a>
+                              
+                        </li>
                         <li class="icons dropdown d-none d-md-flex">
                             {% if user.is_authenticated %}
                               <a href="{% url 'dongmoon'  %}" >동문</a>

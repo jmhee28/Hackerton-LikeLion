@@ -31,7 +31,7 @@ def signup(request):
             return home(request)    
     else:
         form = UserForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+    return render(request, 'accounts/signup2.html', {'form': form})
 
 
 def page_not_found(request, exception):
