@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
 from .models import *
 
-class UserAdmin(BaseUserAdmin):
+class UserAdmin(admin.ModelAdmin):
     # 관리자 화면에 보여질 칼럼 지정
     list_display = ('username','email','is_admin','is_staff', 'university', 'major', 'careerInterest','is_student','is_looking_job','is_headhunter')
     search_fields = ('username', 'name','email')

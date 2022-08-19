@@ -62,7 +62,7 @@ class Informations(models.Model):
         
 class UserManager(BaseUserManager):
     # 일반 user 생성, username 이 userID를 의미함
-    def create_user(self,email,username, name,university, major, address, phone_number  , is_student,is_looking_job,is_headhunter, careerInterest, password=None, ):
+    def create_user(self,email,username, name,university, major, address, phone_number,is_student,is_looking_job,is_headhunter, careerInterest, password=None, ):
         if not username:
             raise ValueError("Users must have an userID.")
         if not name:
