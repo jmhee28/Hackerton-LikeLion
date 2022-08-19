@@ -144,7 +144,7 @@ class User(AbstractBaseUser):
     object = UserManager()  # 헬퍼 클래스 사용
 
     USERNAME_FIELD = 'email'  # 로그인 ID로 사용할 필드
-    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number', 'is_student','is_looking_job','is_headhunter', ' careerInterest', ] # 필수 작성 필드
+    REQUIRED_FIELDS = ['username','name','university', 'major', 'address','phone_number', 'is_student','is_looking_job','is_headhunter',' careerInterest',] # 필수 작성 필드
 
     def __str__(self):
         return self.username
