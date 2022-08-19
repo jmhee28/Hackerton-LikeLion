@@ -181,7 +181,7 @@ def dongmoon(request):
             users.append(u)
         else :
             other_users.append(u)  
-    return render(request, 'artistapp/dongmoon.html',{'users':users,'university':university, 'other_users':other_users })
+    return render(request, 'artistapp/동문.html',{'users':users,'university':university, 'other_users':other_users })
 
 
 def showprofile(request):
